@@ -11,12 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
+<<<<<<< HEAD:dashboard/database/migrations/2023_10_10_070322_create_orders_table.php
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
             $table->foreignId('customers_id')->index()->constrained; // foreign key
             $table->date('order_date');
             $table->integer('total_amount');
-        });
     }
 
     /**
