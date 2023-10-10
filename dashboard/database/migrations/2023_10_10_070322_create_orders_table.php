@@ -13,7 +13,9 @@ return new class extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->foreignId('customers_id')->index()->constrained; // foreign key
+            $table->date('order_date');
+            $table->integer('total_amount');
         });
     }
 
