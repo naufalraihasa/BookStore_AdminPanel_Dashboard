@@ -19,3 +19,7 @@ Route::get('/', function () {
 });
 
 Route::get('/categories', [CategoriesController::class, "index"])->name("categories");
+
+Route::get('/addcategories', [CategoriesController::class, "addcategories"])->name("addcategories");
+
+Route::post('/insertcategories', [CategoriesController::class, "insertcategories"])->name("insertcategories");

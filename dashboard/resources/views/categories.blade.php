@@ -10,30 +10,39 @@
   <body>
     <div class="container">      
       <h1 class="text-center mb-5 pb-2">categories</h1>
-      <button type="button" class="btn btn-success">Add New Categories</button>
-      <table class="table">
-        <thead>
-          <tr>
-            <th scope="col">id</th>
-            <th scope="col">category_name</th>
-            <th scope="col">description</th>
-            <th scope="col">aksi</th>
-          </tr>
-        </thead>
-        <tbody>
-        @foreach ($data as $row)
-          <tr>
-            <th scope="row">{{$row->id}}</th>
-            <td>{{$row->category_name}}</td>
-            <td>{{$row->description}}</td>
-            <td>
-              <button type="button" class="btn btn-primary">Edit</button>
-              <button type="button" class="btn btn-danger">Delete</button>
-            </td>
-          </tr>  
-        @endforeach
-        </tbody>
-      </table>
+      <a href="/addcategories" class="btn btn-success">Add New Categories</a>
+      <div class="row justify-content-center">
+        @if ($message = Session::get('success'))
+          <div class="alert alert-info">
+            <p>{{$message}}</p>
+          </div>
+        @endif
+        <div class="col-10">
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">id</th>
+                <th scope="col">category_name</th>
+                <th scope="col">description</th>
+                <th scope="col">aksi</th>
+              </tr>
+            </thead>
+            <tbody>
+            @foreach ($data as $row)
+              <tr>
+                <th scope="row">{{$row->id}}</th>
+                <td>{{$row->category_name}}</td>
+                <td>{{$row->description}}</td>
+                <td>
+                  <button type="button" class="btn btn-primary">Edit</button>
+                  <button type="button" class="btn btn-danger">Delete</button>
+                </td>
+              </tr>  
+            @endforeach
+            </tbody>
+          </table>
+        </div>
+      </div>
 
     </div>
 
