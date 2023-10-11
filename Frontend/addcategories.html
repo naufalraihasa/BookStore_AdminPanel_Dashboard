@@ -24,9 +24,8 @@
                     <li class="nav-item"></li>
                     <li class="nav-item">
                         <a class="nav-link" href="user.html"><i class="fas fa-table"></i><span>User</span></a>
-                        <a class="nav-link" href="product.html"><i class="far fa-list-alt"></i><span>Product</span></a>
-                        <a class="nav-link" href="/categories"><i class="far fa-list-alt"></i><span>Categories</span></a>
-                    </li>
+                        <a class="nav-link" href="product.html"><i class="far fa-list-alt"></i><span>Product</span></a></li>
+                        <a class="nav-link" href="/categories"><i class="far fa-list-alt"></i><span>Categories</span></a></li>
                     <li class="nav-item"></li>
                     <li class="nav-item"></li>
                 </ul>
@@ -175,15 +174,14 @@
                                         </div>
                                         <div class="card-body">
                                             <form action="/insertcategories" method="POST" enctype="multipart/form-data">
-                                                @csrf
                                                 <div class="row">
                                                     <div class="col">
-                                                        <div class="mb-3"><label class="form-label" for="username"><strong>Name</strong></label><input class="form-control" type="text" id="product-name" name="category_name"></div>
+                                                        <div class="mb-3"><label class="form-label" for="username"><strong>Name</strong></label><input class="form-control" type="text" id="product-name" placeholder="name" name="name"></div>
                                                     </div>
                                                 </div>
                                                 <div class="row">
                                                     <div class="col">
-                                                            <div class="mb-3"><label class="form-label" for="signature"><strong>Description</strong></label><textarea class="form-control" id="signature-1" rows="4" name="description"></textarea></div>
+                                                            <div class="mb-3"><label class="form-label" for="signature"><strong>Description</strong></label><textarea class="form-control" id="signature-1" rows="4" name="signature"></textarea></div>
                                                         </div>
                                                     </div>
                                                 </div>

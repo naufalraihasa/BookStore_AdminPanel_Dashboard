@@ -22,11 +22,7 @@
                 <ul class="navbar-nav text-light" id="accordionSidebar">
                     <li class="nav-item"><a class="nav-link" href="analytics.html"><i class="far fa-chart-bar"></i><span>Analytics</span></a></li>
                     <li class="nav-item"></li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="user.html"><i class="fas fa-table"></i><span>User</span></a>
-                        <a class="nav-link" href="product.html"><i class="far fa-list-alt"></i><span>Product</span></a>
-                        <a class="nav-link" href="/categories"><i class="far fa-list-alt"></i><span>Categories</span></a>
-                    </li>
+                    <li class="nav-item"><a class="nav-link" href="user.html"><i class="fas fa-table"></i><span>User</span></a><a class="nav-link" href="product.html"><i class="far fa-list-alt"></i><span>Product</span></a></li>
                     <li class="nav-item"></li>
                     <li class="nav-item"></li>
                 </ul>
@@ -37,6 +33,9 @@
             <div id="content">
                 <nav class="navbar navbar-expand bg-white shadow mb-4 topbar static-top navbar-light">
                     <div class="container-fluid"><button class="btn btn-link d-md-none rounded-circle me-3" id="sidebarToggleTop" type="button"><i class="fas fa-bars"></i></button>
+                        <form class="d-none d-sm-inline-block me-auto ms-md-3 my-2 my-md-0 mw-100 navbar-search">
+                            <div class="input-group"><input class="bg-light form-control border-0 small" type="text" placeholder="Search for ..."><button class="btn btn-primary py-0" type="button"><i class="fas fa-search"></i></button></div>
+                        </form>
                         <ul class="navbar-nav flex-nowrap ms-auto">
                             <li class="nav-item dropdown d-sm-none no-arrow"><a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="#"><i class="fas fa-search"></i></a>
                                 <div class="dropdown-menu dropdown-menu-end p-3 animated--grow-in" aria-labelledby="searchDropdown">
@@ -127,7 +126,7 @@
                     </div>
                 </nav>
                 <div class="container-fluid">
-                    <h3 class="text-dark mb-4">Add Categories</h3>
+                    <h3 class="text-dark mb-4">Product Details</h3>
                     <div class="row mb-3">
                         <div class="col-lg-4">
                             <div class="card mb-3">
@@ -171,20 +170,31 @@
                                 <div class="col">
                                     <div class="card shadow mb-3">
                                         <div class="card-header py-3">
-                                            <p class="text-primary m-0 fw-bold">New Categories</p>
+                                            <p class="text-primary m-0 fw-bold">Product Details</p>
                                         </div>
                                         <div class="card-body">
-                                            <form action="/insertcategories" method="POST" enctype="multipart/form-data">
-                                                @csrf
+                                            <form>
                                                 <div class="row">
                                                     <div class="col">
-                                                        <div class="mb-3"><label class="form-label" for="username"><strong>Name</strong></label><input class="form-control" type="text" id="product-name" name="category_name"></div>
+                                                        <div class="mb-3"><label class="form-label" for="username"><strong>Name</strong></label><input class="form-control" type="text" id="product-name" placeholder="name" name="name"></div>
+                                                    </div>
+                                                    <div class="col">
+                                                        <div class="mb-3"><label class="form-label" for="email"><strong>Category</strong></label><select class="form-select form-select-sm tbl-wfx kot-table font-sm">
+                                                                <option value="1" selected="">-- Select Product --</option>
+                                                                <option value="1">Cheese Burger</option>
+                                                                <option value="2">Cheese Pizza</option>
+                                                            </select></div>
                                                     </div>
                                                 </div>
                                                 <div class="row">
                                                     <div class="col">
-                                                            <div class="mb-3"><label class="form-label" for="signature"><strong>Description</strong></label><textarea class="form-control" id="signature-1" rows="4" name="description"></textarea></div>
+                                                        <div class="mb-3"><label class="form-label" for="first_name"><strong>Price</strong></label><input class="form-control form-control-sm font-sm" type="number" step="1" min="1">
+                                                            <div class="mb-3"><label class="form-label" for="signature"><strong>Description</strong></label><textarea class="form-control" id="signature-1" rows="4" name="signature"></textarea></div>
                                                         </div>
+                                                    </div>
+                                                    <div class="col">
+                                                        <div class="mb-3"><label class="form-label" for="last_name"><strong>Cost</strong></label><input class="form-control form-control-sm font-sm" type="number" step="1" min="1"></div>
+                                                        <div class="mb-3"><label class="form-label" for="last_name"><strong>Quantity</strong></label><input class="form-control form-control-sm font-sm" type="number" step="1" min="1"></div>
                                                     </div>
                                                 </div>
                                                 <div class="mb-3"><button class="btn btn-primary btn-sm" type="submit" style="background: rgb(28,200,138);width: 68.0625px;height: 38.6px;font-size: 16px;">Add</button></div>

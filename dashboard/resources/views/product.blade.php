@@ -23,11 +23,8 @@
                 <hr class="sidebar-divider my-0">
                 <ul class="navbar-nav text-light" id="accordionSidebar">
                     <li class="nav-item"><a class="nav-link" href="analytics.html"><i class="far fa-chart-bar"></i><span>Analytics</span></a></li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="user.html"><i class="fas fa-table"></i><span>User</span></a>
-                        <a class="nav-link active" href="product.html"><i class="far fa-list-alt"></i><span>Product</span></a>
-                        <a class="nav-link active" href="categories.html"><i class="far fa-list-alt"></i><span>Categories</span></a>
-                    </li>
+                    <li class="nav-item"></li>
+                    <li class="nav-item"><a class="nav-link" href="user.html"><i class="fas fa-table"></i><span>User</span></a><a class="nav-link active" href="product.html"><i class="far fa-list-alt"></i><span>Product</span></a></li>
                     <li class="nav-item"></li>
                     <li class="nav-item"></li>
                 </ul>
