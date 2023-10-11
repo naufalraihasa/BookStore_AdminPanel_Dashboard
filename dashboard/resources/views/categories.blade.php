@@ -29,10 +29,10 @@
                                 class="far fa-chart-bar"></i><span>Analytics</span></a></li>
                     <li class="nav-item">
                         <a class="nav-link" href="user.html"><i class="fas fa-table"></i><span>User</span></a>
-                        <a class="nav-link active" href="product.html"><i
-                                class="far fa-list-alt"></i><span>Product</span></a>
-                        <a class="nav-link active" href="/categories"><i
-                                class="far fa-list-alt"></i><span>Categories</span></a>
+                        <a class="nav-link" href="product.html"><i
+                                class="far fa-list-alt"></i><span>Products</span></a>
+                        <a class="nav-link" href="/categories"><i
+                                class="far fa-list-alt"></i><span>Category</span></a>
                     </li>
                     <li class="nav-item"></li>
                     <li class="nav-item"></li>
@@ -178,7 +178,7 @@
                     </div>
                 </nav>
                 <div class="container-fluid">
-                    <h3 class="text-dark mb-4">Product</h3>
+                    <h3 class="text-dark mb-4">Category</h3>
                     @if ($message = Session::get('success'))
                     <div class="alert alert-info">
                         <p>{{$message}}</p>
@@ -186,7 +186,7 @@
                     @endif
                     <div class="card shadow">
                         <div class="card-header py-3">
-                            <p class="text-primary m-0 fw-bold">Product Info</p>
+                            <p class="text-primary m-0 fw-bold">Category Info</p>
                         </div>
                         <div class="card-body">
                             <div class="row">
@@ -218,16 +218,27 @@
                                         </tr>
                                     </thead>
                                     <tbody>
+                                        
+                                        @php
+                                            $number = 1;
+                                        @endphp
+
                                         @foreach ($data as $row)
                                         <tr>
-                                            <th scope="row">{{$row->id}}</th>
+                                            <th scope="row">{{$number++}}</th>
                                             <td>{{$row->category_name}}</td>
                                             <td>{{$row->description}}</td>
                                             <td>
-                                                <div class="btn-group" role="group"><button class="btn btn-primary"
-                                                        type="button"><i class="fa fa-pencil"></i> Edit </button><button
-                                                        class="btn btn-primary" type="button"> <i
-                                                            class="fa fa-trash-o"></i></button></div>
+                                                <div class="btn-group" role="group">
+                                                    <a class="btn btn-primary" href="/editcategories/{{ $row->id }}">
+                                                        <i class="fa fa-pencil"></i> 
+                                                        Edit 
+                                                    </a>
+                                                    <a href="/deletecategories/{{ $row->id }}" class="btn btn-danger"> 
+                                                        <i class="fa fa-trash-o"></i>
+                                                        Delete
+                                                    </a>
+                                                </div>
                                             </td>
                                         </tr>
                                         @endforeach

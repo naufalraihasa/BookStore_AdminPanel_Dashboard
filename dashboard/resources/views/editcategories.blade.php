@@ -5,10 +5,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>Profile - Brand</title>
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ asset("bootstrap/css/bootstrap.min.css") }}">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i&amp;display=swap">
-    <link rel="stylesheet" href="assets/fonts/fontawesome-all.min.css">
-    <link rel="stylesheet" href="assets/css/Tricky-Grid---2-Column-on-Desktop--Tablet-Flip-Order-of-12-Column-rows-on-Mobile.css">
+    <link rel="stylesheet" href="{{ asset("fonts/fontawesome-all.min.css") }}">
+    <link rel="stylesheet" href="{{ asset("css/Tricky-Grid---2-Column-on-Desktop--Tablet-Flip-Order-of-12-Column-rows-on-Mobile.css") }}">
 </head>
 
 <body id="page-top">
@@ -117,7 +117,7 @@
                             </li>
                             <div class="d-none d-sm-block topbar-divider"></div>
                             <li class="nav-item dropdown no-arrow">
-                                <div class="nav-item dropdown no-arrow"><a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="#"><span class="d-none d-lg-inline me-2 text-gray-600 small">Valerie Luna</span><img class="border rounded-circle img-profile" src="assets/img/avatars/4.jpg"></a>
+                                <div class="nav-item dropdown no-arrow"><a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="#"><span class="d-none d-lg-inline me-2 text-gray-600 small">Valerie Luna</span><img class="border rounded-circle img-profile" src="{{ asset("img/avatars/4.jpg") }}"></a>
                                     <div class="dropdown-menu shadow dropdown-menu-end animated--grow-in"><a class="dropdown-item" href="#"><i class="fas fa-user fa-sm fa-fw me-2 text-gray-400"></i>&nbsp;Profile</a><a class="dropdown-item" href="#"><i class="fas fa-cogs fa-sm fa-fw me-2 text-gray-400"></i>&nbsp;Settings</a><a class="dropdown-item" href="#"><i class="fas fa-list fa-sm fa-fw me-2 text-gray-400"></i>&nbsp;Activity log</a>
                                         <div class="dropdown-divider"></div><a class="dropdown-item" href="#"><i class="fas fa-sign-out-alt fa-sm fa-fw me-2 text-gray-400"></i>&nbsp;Logout</a>
                                     </div>
@@ -127,7 +127,7 @@
                     </div>
                 </nav>
                 <div class="container-fluid">
-                    <h3 class="text-dark mb-4">Add Categories</h3>
+                    <h3 class="text-dark mb-4">Edit Categories</h3>
                     <div class="row mb-3">
                         <div class="col-lg-8">
                             <div class="row mb-3 d-none">
@@ -167,20 +167,30 @@
                                             <p class="text-primary m-0 fw-bold">New Categories</p>
                                         </div>
                                         <div class="card-body">
-                                            <form action="/insertcategories" method="POST" enctype="multipart/form-data">
+                                            <form action="/updatecategories/{{ $data->id }}" method="POST" enctype="multipart/form-data">
                                                 @csrf
                                                 <div class="row">
                                                     <div class="col">
-                                                        <div class="mb-3"><label class="form-label" for="username"><strong>Name</strong></label><input class="form-control" type="text" id="product-name" name="category_name"></div>
+                                                        <div class="mb-3">
+                                                            <label class="form-label" for="username">
+                                                                <strong>Name</strong>
+                                                            </label>
+                                                            <input class="form-control" type="text" id="product-name" name="category_name" value="{{ $data->category_name}}" >
+                                                        </div>
                                                     </div>
                                                 </div>
                                                 <div class="row">
                                                     <div class="col">
-                                                            <div class="mb-3"><label class="form-label" for="signature"><strong>Description</strong></label><textarea class="form-control" id="signature-1" rows="4" name="description"></textarea></div>
+                                                            <div class="mb-3">
+                                                                <label class="form-label" for="signature">
+                                                                    <strong>Description</strong>
+                                                                </label>
+                                                                <textarea class="form-control" id="signature-1" rows="4" name="description">{{ $data->description}}</textarea>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="mb-3"><button class="btn btn-primary btn-sm" type="submit" style="background: rgb(28,200,138);width: 68.0625px;height: 38.6px;font-size: 16px;">Add</button></div>
+                                                <div class="mb-3"><button class="btn btn-primary btn-sm ms-3" type="submit" style="background: rgb(28,200,138);width: 68.0625px;height: 38.6px;font-size: 16px;">Edit</button></div>
                                             </form>
                                         </div>
                                     </div>
@@ -192,9 +202,9 @@
             </div>
         </div><a class="border rounded d-inline scroll-to-top" href="#page-top"><i class="fas fa-angle-up"></i></a>
     </div>
-    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-    <script src="assets/js/bs-init.js"></script>
-    <script src="assets/js/theme.js"></script>
+    <script src="{{ asset("bootstrap/js/bootstrap.min.js") }}"></script>
+    <script src="{{ asset("js/bs-init.js") }}"></script> 
+    <script src="{{ asset("js/theme.js") }}"></script>
 </body>
 
 </html>

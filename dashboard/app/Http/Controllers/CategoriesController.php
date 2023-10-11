@@ -21,4 +21,23 @@ class CategoriesController extends Controller
         categories::create($request->all());
         return redirect()->route("categories")->with('success','Category added successfully');
     }
+
+    public function editcategories($id){
+        $data = categories::find($id);
+        //dd($data);
+        return view("editcategories", compact("data"));
+    }
+
+    public function updatecategories(Request $request, $id){
+        //dd($request->all());
+        $data = categories::find($id);
+        $data->update($request->all());
+        return redirect()->route("categories")->with('success','Category updated successfully');
+    }
+
+    public function deletecategories($id){
+        $data = categories::find($id);
+        $data->delete();
+        return redirect()->route("categories")->with('success','Category deleted successfully');
+    }
 }
