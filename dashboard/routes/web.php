@@ -21,7 +21,6 @@ Route::get('/', function () {
 
 Route::get('/categories', [CategoriesController::class, "index"])->name("categories");
 
-Route::get('/books', [BooksController::class, "index"])->name("books");
 
 Route::get('/addcategories', [CategoriesController::class, "addcategories"])->name("addcategories");
 Route::post('/insertcategories', [CategoriesController::class, "insertcategories"])->name("insertcategories");
@@ -30,3 +29,7 @@ Route::get('/editcategories/{id}', [CategoriesController::class, "editcategories
 Route::post('/updatecategories/{id}', [CategoriesController::class, "updatecategories"])->name("updatecategories");
 
 Route::get('/deletecategories/{id}', [CategoriesController::class, "deletecategories"])->name("deletecategories");
+
+Route::get('/books', [BooksController::class, "index"])->name("books");
+Route::get('/addbooks', [BooksController::class, "addbooks"])->name("addbooks");
+Route::post('/insertbooks', [BooksController::class, "insertbooks"])->name("insertbooks");

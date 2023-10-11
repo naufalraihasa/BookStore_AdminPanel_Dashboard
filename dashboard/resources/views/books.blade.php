@@ -29,7 +29,7 @@
                                 class="far fa-chart-bar"></i><span>Analytics</span></a></li>
                     <li class="nav-item">
                         <a class="nav-link" href="user.html"><i class="fas fa-table"></i><span>User</span></a>
-                        <a class="nav-link" href="product.html"><i
+                        <a class="nav-link" href="/books"><i
                                 class="far fa-list-alt"></i><span>Books</span></a>
                         <a class="nav-link" href="/categories"><i
                                 class="far fa-list-alt"></i><span>Category</span></a>
@@ -278,7 +278,7 @@
                                     <div class="col-sm-6 col-xl-1"
                                         style="margin-right: 26px;padding-right: 0px;padding-left: 0px;">
                                         <span>
-                                            <a class="btn btn-primary d-block btn-user w-100" href="/addcategories"
+                                            <a class="btn btn-primary d-block btn-user w-100" href="/addbooks"
                                                 style="background: rgb(78,223,119);margin-left: 20px;margin-right: 20px;">
                                                 <i
                                                     class="fa fa-plus"
