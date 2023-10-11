@@ -9,7 +9,20 @@ class categories extends Model
 {
     use HasFactory;
 
-    protected $guarded = [];
+    protected $table = 'categories';
+
+    protected $primaryKey = 'id';
+
+    protected $fillable = [
+        'category_name',
+        'description',
+    ];
 
     public $timestamps = false;
+
+    public function books()
+    {
+        return $this->hasMany(books::class);
+    }
 }
+
