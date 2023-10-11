@@ -29,7 +29,7 @@
                                 class="far fa-chart-bar"></i><span>Analytics</span></a></li>
                     <li class="nav-item">
                         <a class="nav-link" href="user.html"><i class="fas fa-table"></i><span>User</span></a>
-                        <a class="nav-link" href="/books"><i
+                        <a class="nav-link" href="product.html"><i
                                 class="far fa-list-alt"></i><span>Books</span></a>
                         <a class="nav-link" href="/categories"><i
                                 class="far fa-list-alt"></i><span>Category</span></a>
@@ -212,8 +212,10 @@
                                     <thead>
                                         <tr>
                                             <th>ID</th>
-                                            <th>Category Name</th>
-                                            <th>Description</th>
+                                            <th>Category ID</th>
+                                            <th>Book Name</th>
+                                            <th>Book Description</th>
+                                            <th>Book Stock</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
@@ -226,8 +228,10 @@
                                         @foreach ($data as $row)
                                         <tr>
                                             <th scope="row">{{$number++}}</th>
-                                            <td>{{$row->category_name}}</td>
-                                            <td>{{$row->description}}</td>
+                                            <td>{{$row->category_id}}</td>
+                                            <td>{{$row->book_name}}</td>
+                                            <td>{{$row->book_description}}</td>
+                                            <td>{{$row->book_stock}}</td>
                                             <td>
                                                 <div class="btn-group" role="group">
                                                     <a class="btn btn-primary" href="/editcategories/{{ $row->id }}">

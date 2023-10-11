@@ -12,6 +12,7 @@ class CategoriesController extends Controller
         return view("categories", compact("data"));
     }
 
+
     public function addcategories(){
         return view("addcategories");
     }

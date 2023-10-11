@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\BooksController;
 use App\Http\Controllers\CategoriesController;
 
 /*
@@ -19,6 +20,8 @@ Route::get('/', function () {
 });
 
 Route::get('/categories', [CategoriesController::class, "index"])->name("categories");
+
+Route::get('/books', [BooksController::class, "index"])->name("books");
 
 Route::get('/addcategories', [CategoriesController::class, "addcategories"])->name("addcategories");
 Route::post('/insertcategories', [CategoriesController::class, "insertcategories"])->name("insertcategories");
