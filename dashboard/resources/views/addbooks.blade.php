@@ -152,7 +152,7 @@
                                                         <select class="form-select mb-3" name="category_id" aria-label="Default select example">
                                                             <option selected>Select Category ID</option>
                                                             @foreach($categoriesdata as $data)
-                                                                <option value="1">{{ $data->id}}</option>
+                                                                <option value="{{ $data->id}}">{{ $data->category_name}}</option>
                                                             @endforeach
                                                         </select>
                                                     </div>

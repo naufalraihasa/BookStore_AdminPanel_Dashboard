@@ -31,5 +31,12 @@ Route::post('/updatecategories/{id}', [CategoriesController::class, "updatecateg
 Route::get('/deletecategories/{id}', [CategoriesController::class, "deletecategories"])->name("deletecategories");
 
 Route::get('/books', [BooksController::class, "index"])->name("books");
+
 Route::get('/addbooks', [BooksController::class, "addbooks"])->name("addbooks");
+
 Route::post('/insertbooks', [BooksController::class, "insertbooks"])->name("insertbooks");
+Route::get('/editbooks/{id}', [BooksController::class, "editbooks"])->name("editbooks");
+
+Route::post('/updatebooks/{id}', [BooksController::class, "updatebooks"])->name("updatebooks");
+
+Route::get('/deletebooks/{id}', [BooksController::class, "deletebooks"])->name("deletecategories");

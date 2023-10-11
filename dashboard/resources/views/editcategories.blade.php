@@ -24,7 +24,7 @@
                     <li class="nav-item"></li>
                     <li class="nav-item">
                         <a class="nav-link" href="user.html"><i class="fas fa-table"></i><span>User</span></a>
-                        <a class="nav-link" href="product.html"><i class="far fa-list-alt"></i><span>Product</span></a>
+                        <a class="nav-link" href="/books"><i class="far fa-list-alt"></i><span>Books</span></a>
                         <a class="nav-link" href="/categories"><i class="far fa-list-alt"></i><span>Categories</span></a>
                     </li>
                     <li class="nav-item"></li>

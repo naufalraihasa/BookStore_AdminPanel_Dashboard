@@ -9,16 +9,19 @@ class books extends Model
 {
     use HasFactory;
 
-    protected $table = 'books';
+    // protected $table = 'books';
 
-    protected $primaryKey = 'id';
+    // protected $primaryKey = 'id';
 
-    protected $fillable = [
-        'category_id',
-        'book_name',
-        'book_description',
-        'book_stock',
-    ];
+    // protected $fillable = [
+    //     'category_id',
+    //     'category',
+    //     'book_name',
+    //     'book_description',
+    //     'book_stock',
+    // ];
+
+    protected $guarded = [];
 
     public $timestamps = false;
     
