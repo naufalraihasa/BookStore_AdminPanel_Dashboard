@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('books', function (Blueprint $table) {
             $table->id();
-            $table->integer('category_id')->unsigned();
+            $table->unsignedBigInteger('category_id');
             $table->string('book_name');
             $table->string('book_description');
             $table->integer('book_stock');
