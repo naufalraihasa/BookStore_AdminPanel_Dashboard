@@ -39,4 +39,4 @@ Route::get('/editbooks/{id}', [BooksController::class, "editbooks"])->name("edit
 
 Route::post('/updatebooks/{id}', [BooksController::class, "updatebooks"])->name("updatebooks");
 
-Route::get('/deletebooks/{id}', [BooksController::class, "deletebooks"])->name("deletecategories");
+Route::get('/deletebooks/{id}', [BooksController::class, "deletebooks"])->name("deletebooks");
