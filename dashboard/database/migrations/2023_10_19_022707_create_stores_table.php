@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('store_name');
             $table->string('store_region');
-            $table->integer('store_address');
+            $table->string('store_address');
         });
     }
 
