@@ -29,4 +29,9 @@ class books extends Model
     {
         return $this->belongsTo(categories::class,'category_id','id');
     }
+
+    public function stores()
+    {
+        return $this->belongsTo(store::class,'store_id','id');
+    }
 }
