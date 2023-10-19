@@ -276,6 +276,21 @@
                                                             value="{{ $data->book_stock }}" class="form-control" />
                                                     </div>
                                                 </div>
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <label class="form-label" for=""><strong>Store
+                                                                ID</strong></label>
+                                                        <select class="form-select mb-3" name="category_id"
+                                                            aria-label="Default select example">
+                                                            <option selected>Select Category ID</option>
+                                                            @foreach ($storesdata as $data)
+                                                                <option value="{{ $data->id }}">
+                                                                    {{ $data->store_name }}
+                                                                </option>
+                                                            @endforeach
+                                                        </select>
+                                                    </div>
+                                                </div>
                                                 <div class="mb-3"><button class="btn btn-primary btn-sm"
                                                         type="submit"
                                                         style="background: rgb(28,200,138);width: 68.0625px;height: 38.6px;font-size: 16px;">Add</button>

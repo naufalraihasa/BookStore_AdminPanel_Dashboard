@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\books;
+use App\Models\store;
 use App\Models\categories;
 use Illuminate\Http\Request;
 
@@ -17,7 +18,8 @@ class BooksController extends Controller
 
     public function addbooks(){
         $categoriesdata = categories::all();
-        return view("addbooks", compact("categoriesdata"));
+        $storesdata = store::all();
+        return view("addbooks", compact("categoriesdata", "storesdata"));
     }
 
     public function insertbooks(Request $request){
@@ -30,7 +32,8 @@ class BooksController extends Controller
         $data = books::find($id);
         //dd($data);
         $categoriesdata = categories::all();
-        return view("editbooks", compact("data", "categoriesdata"));
+        $storesdata = store::all();
+        return view("editbooks", compact("data", "categoriesdata", "storesdata"));
     }
 
     public function updatebooks(Request $request, $id){

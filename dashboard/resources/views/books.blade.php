@@ -222,6 +222,8 @@
                                             <th>Book Name</th>
                                             <th>Book Description</th>
                                             <th>Book Stock</th>
+                                            <th>Store ID</th>
+                                            <th>Store Name</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
@@ -239,6 +241,8 @@
                                                 <td>{{ $row->book_name }}</td>
                                                 <td>{{ $row->book_description }}</td>
                                                 <td>{{ $row->book_stock }}</td>
+                                                <td>{{ $row->store_id }}</td>
+                                                <td>{{ $row->category->store_name }}</td>
                                                 <td>
                                                     <div class="btn-group" role="group">
                                                         <a class="btn btn-primary"
