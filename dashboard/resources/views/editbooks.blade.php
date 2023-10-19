@@ -280,7 +280,7 @@
                                                     <div class="col">
                                                         <label class="form-label" for=""><strong>Store
                                                                 ID</strong></label>
-                                                        <select class="form-select mb-3" name="category_id"
+                                                        <select class="form-select mb-3" name="store_id"
                                                             aria-label="Default select example">
                                                             <option selected>Select Category ID</option>
                                                             @foreach ($storesdata as $data)

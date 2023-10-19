@@ -242,7 +242,7 @@
                                                 <td>{{ $row->book_description }}</td>
                                                 <td>{{ $row->book_stock }}</td>
                                                 <td>{{ $row->store_id }}</td>
-                                                <td>{{ $row->store->store_name }}</td>
+                                                <td>{{ $row->stores->store_name }}</td>
                                                 <td>
                                                     <div class="btn-group" role="group">
                                                         <a class="btn btn-primary"

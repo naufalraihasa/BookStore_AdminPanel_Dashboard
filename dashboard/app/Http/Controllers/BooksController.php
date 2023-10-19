@@ -19,6 +19,7 @@ class BooksController extends Controller
     public function addbooks(){
         $categoriesdata = categories::all();
         $storesdata = store::all();
+        //dd($storesdata);
         return view("addbooks", compact("categoriesdata", "storesdata"));
     }
 
