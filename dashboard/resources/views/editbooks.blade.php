@@ -226,18 +226,17 @@
                                 <div class="col">
                                     <div class="card shadow mb-3">
                                         <div class="card-header py-3">
-                                            <p class="text-primary m-0 fw-bold">New Categories</p>
+                                            <p class="text-primary m-0 fw-bold">Books info</p>
                                         </div>
                                         <div class="card-body">
                                             <form action="/updatebooks/{{$data->id}}" method="POST" enctype="multipart/form-data">
                                                 @csrf
                                                 <div class="row">
                                                     <div class="col">
-                                                        <label class="form-label" for=""><strong>Category
-                                                                ID</strong></label>
+                                                        <label class="form-label" for=""><strong>Book Category</strong></label>
                                                         <select class="form-select mb-3" name="category_id"
                                                             aria-label="Default select example">
-                                                            <option selected>Select Category ID</option>
+                                                            <option selected>Select Book Category</option>
                                                             @foreach ($categoriesdata as $data)
                                                                 <option value="{{ $data->id }}">
                                                                     {{ $data->category_name }}
@@ -278,11 +277,10 @@
                                                 </div>
                                                 <div class="row">
                                                     <div class="col">
-                                                        <label class="form-label" for=""><strong>Store
-                                                                ID</strong></label>
+                                                        <label class="form-label" for=""><strong>Store Location</strong></label>
                                                         <select class="form-select mb-3" name="store_id"
                                                             aria-label="Default select example">
-                                                            <option selected>Select Category ID</option>
+                                                            <option selected>Select Store Location</option>
                                                             @foreach ($storesdata as $data)
                                                                 <option value="{{ $data->id }}">
                                                                     {{ $data->store_name }}

@@ -181,7 +181,7 @@
                     </div>
                 </nav>
                 <div class="container-fluid">
-                    <h3 class="text-dark mb-4">Category</h3>
+                    <h3 class="text-dark mb-4">Books</h3>
                     @if ($message = Session::get('success'))
                         <div class="alert alert-info">
                             <p>{{ $message }}</p>
@@ -189,7 +189,7 @@
                     @endif
                     <div class="card shadow">
                         <div class="card-header py-3">
-                            <p class="text-primary m-0 fw-bold">Category Info</p>
+                            <p class="text-primary m-0 fw-bold">Books Info</p>
                         </div>
                         <div class="card-body">
                             <div class="row">
@@ -217,12 +217,12 @@
                                     <thead>
                                         <tr>
                                             <th>ID</th>
-                                            <th>Category ID</th>
+                                            {{-- <th>Category ID</th> --}}
                                             <th>Category</th>
                                             <th>Book Name</th>
                                             <th>Book Description</th>
                                             <th>Book Stock</th>
-                                            <th>Store ID</th>
+                                            {{-- <th>Store ID</th> --}}
                                             <th>Store Name</th>
                                             <th>Action</th>
                                         </tr>
@@ -236,12 +236,12 @@
                                         @foreach ($data as $row)
                                             <tr>
                                                 <th scope="row">{{ $number++ }}</th>
-                                                <td>{{ $row->category_id }}</td>
+                                                {{-- <td>{{ $row->category_id }}</td> --}}
                                                 <td>{{ $row->category->category_name }}</td>
                                                 <td>{{ $row->book_name }}</td>
                                                 <td>{{ $row->book_description }}</td>
                                                 <td>{{ $row->book_stock }}</td>
-                                                <td>{{ $row->store_id }}</td>
+                                                {{-- <td>{{ $row->store_id }}</td> --}}
                                                 <td>{{ $row->stores->store_name }}</td>
                                                 <td>
                                                     <div class="btn-group" role="group">
@@ -269,12 +269,27 @@
                                             </th>
                                             <th>
                                                 <strong>
-                                                    Category Name
+                                                    Category
                                                 </strong>
                                             </th>
                                             <th>
                                                 <strong>
-                                                    Description
+                                                    Book Name
+                                                </strong>
+                                            </th>
+                                            <th>
+                                                <strong>
+                                                    Book Description
+                                                </strong>
+                                            </th>
+                                            <th>
+                                                <strong>
+                                                    Book Stock
+                                                </strong>
+                                            </th>
+                                            <th>
+                                                <strong>
+                                                    Store Name
                                                 </strong>
                                             </th>
                                             <th>
