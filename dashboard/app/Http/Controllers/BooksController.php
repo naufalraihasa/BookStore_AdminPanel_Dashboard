@@ -9,7 +9,9 @@ use Illuminate\Http\Request;
 class BooksController extends Controller
 {
     public function index(){
-        $data = books::all();
+        $data = books::all(); // ini buat di tampilkan di master ( master bisa filter data)
+        //$dataA (ditampilin di admin A)
+        //$dataB (ditampilin di admin B)
         return view("books", compact("data"));
     }
 

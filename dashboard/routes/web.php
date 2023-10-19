@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BooksController;
+use App\Http\Controllers\StoreController;
 use App\Http\Controllers\CategoriesController;
 
 /*
@@ -19,6 +20,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/stores', [StoreController::class, "index"])->name("stores");
 Route::get('/categories', [CategoriesController::class, "index"])->name("categories");
 
 
