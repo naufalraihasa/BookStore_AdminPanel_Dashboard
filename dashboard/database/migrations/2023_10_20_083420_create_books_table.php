@@ -17,11 +17,17 @@ return new class extends Migration
             $table->string('book_name');
             $table->string('book_description');
             $table->integer('book_stock');
+            $table->unsignedBigInteger('store_id');
         });
 
         Schema::table('books', function (Blueprint $table) {
             $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
         });
+
+        Schema::table('books', function (Blueprint $table) {
+            $table->foreign('store_id')->references('id')->on('stores')->onDelete('cascade');
+        });
+
     }
 
     /**

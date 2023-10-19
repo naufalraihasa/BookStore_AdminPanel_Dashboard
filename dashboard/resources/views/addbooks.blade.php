@@ -178,7 +178,7 @@
                                                         <label class="form-label" for=""><strong>Store ID</strong></label>
                                                         <select class="form-select mb-3" name="store_id" aria-label="Default select example">
                                                             <option selected>Select Category ID</option>
-                                                            @foreach($categoriesdata as $data)
+                                                            @foreach($storesdata as $data)
                                                                 <option value="{{ $data->id}}">{{ $data->store_name}}</option>
                                                             @endforeach
                                                         </select>
