@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BooksController;
+use App\Http\Controllers\LoginController;
 use App\Http\Controllers\StoreController;
 use App\Http\Controllers\CategoriesController;
 
@@ -19,6 +20,8 @@ use App\Http\Controllers\CategoriesController;
 Route::get('/', function () {
     return view('login');
 });
+
+Route::get('/', [LoginController::class,'login'])->name('login');
 
 Route::get('/analytics', function () {
     return view('analytics');
