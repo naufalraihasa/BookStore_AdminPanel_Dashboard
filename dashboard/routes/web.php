@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BooksController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\StoreController;
+use App\Http\Controllers\AnalyticsController;
 use App\Http\Controllers\CategoriesController;
 
 /*
@@ -22,10 +23,15 @@ Route::get('/', function () {
 });
 
 Route::get('/', [LoginController::class,'login'])->name('login');
+Route::get('/register', [LoginController::class,'register'])->name('register');
 
-Route::get('/analytics', function () {
-    return view('analytics');
-});
+// Route::get('/analytics', function () {
+//     return view('analytics');
+// });
+
+Route::get('/analytics', [AnalyticsController::class, "index"])->name("books");
+Route::get('/analytics_store_A', [AnalyticsController::class, "analyticsA"])->name("analyticsA");
+Route::get('/analytics_store_B', [AnalyticsController::class, "analyticsB"])->name("analyticsB");
 
 Route::get('/stores', [StoreController::class, "index"])->name("stores");
 Route::get('/categories', [CategoriesController::class, "index"])->name("categories");

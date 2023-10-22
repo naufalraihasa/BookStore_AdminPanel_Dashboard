@@ -23,7 +23,7 @@
                 </a>
                 <hr class="sidebar-divider my-0">
                 <ul class="navbar-nav text-light" id="accordionSidebar">
-                    <li class="nav-item"><a class="nav-link" href="/analytics"><i
+                    {{-- <li class="nav-item"><a class="nav-link" href="/analytics"><i
                                 class="far fa-chart-bar"></i><span>Analytics</span></a></li>
                     <li class="nav-item">
                         <a class="nav-link" href="user.html"><i class="fas fa-table"></i><span>User</span></a>
@@ -33,7 +33,8 @@
                                 class="far fa-list-alt"></i><span>Category</span></a>
                     </li>
                     <li class="nav-item"></li>
-                    <li class="nav-item"></li>
+                    <li class="nav-item"></li> --}}
+                    @yield('sidebar')
                 </ul>
                 <div class="text-center d-none d-md-inline"><button class="btn rounded-circle border-0"
                         id="sidebarToggle" type="button"></button></div>

@@ -1,5 +1,26 @@
 @extends('layouts.store')
 
+@section('sidebar')
+    <div class="container-fluid d-flex flex-column p-0"><a
+            class="navbar-brand d-flex justify-content-center align-items-center sidebar-brand m-0" href="#">
+            {{-- <div class="sidebar-brand-icon rotate-n-15"><i class="fas fa-laugh-wink"></i></div> --}}
+            <div class="sidebar-brand-text mx-3"><span>Analytics</span></div>
+        </a>
+        <hr class="sidebar-divider my-0">
+        <ul class="navbar-nav text-light" id="accordionSidebar">
+            <li class="nav-item"><a class="nav-link" href="analytics_store_B"><i
+                        class="far fa-chart-bar"></i><span>Analytics</span></a></li>
+            <li class="nav-item">
+                <a class="nav-link" href="/books_store_B"><i class="far fa-list-alt"></i><span>Books</span></a>
+            </li>
+            <li class="nav-item"></li>
+            <li class="nav-item"></li>
+        </ul>
+        <div class="text-center d-none d-md-inline"><button class="btn rounded-circle border-0" id="sidebarToggle"
+                type="button"></button></div>
+    </div>
+@endsection
+
 @section('header')
     <h3 class="text-dark mb-4">Book Store B</h3>
 @endsection

@@ -1,8 +1,15 @@
 @extends('layouts.analyticstemplate')
 
+@section('sidebar')
+    <li class="nav-item"><a class="nav-link" href="/analytics_store_B"><i class="far fa-chart-bar"></i><span>Analytics</span></a></li>
+    <li class="nav-item">
+        <a class="nav-link" href="/books_store_B"><i class="far fa-list-alt"></i><span>Books</span></a>
+    </li>
+@endsection
+
 @section('content')
     <div class="d-sm-flex justify-content-between align-items-center mb-4">
-        <h3 class="text-dark mb-0">Dashboard Analytics</h3><a class="btn btn-primary btn-sm d-none d-sm-inline-block"
+        <h3 class="text-dark mb-0">Dashboard Analytics Store B</h3><a class="btn btn-primary btn-sm d-none d-sm-inline-block"
             role="button" href="#"><i class="fas fa-download fa-sm text-white-50"></i>&nbsp;Generate Report</a>
     </div>
     <div class="row">
