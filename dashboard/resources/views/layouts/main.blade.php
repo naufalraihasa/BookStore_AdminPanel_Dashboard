@@ -279,7 +279,7 @@
                                 <div class="row">
                                     <div class="col-sm-6 col-xl-1"
                                         style="margin-right: 26px;padding-right: 0px;padding-left: 0px;">
-                                        <span>
+                                        {{-- <span>
                                             <a class="btn btn-primary d-block btn-user w-100" href="/addcategories"
                                                 style="background: rgb(78,223,119);margin-left: 20px;margin-right: 20px;">
                                                 <i
@@ -288,7 +288,8 @@
                                                 </i>
                                                 Add
                                             </a>
-                                        </span>
+                                        </span> --}}
+                                        @yield('add')
                                     </div>
                                 </div>
                             </div>

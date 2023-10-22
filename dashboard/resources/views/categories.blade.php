@@ -88,6 +88,18 @@
     </table>
 @endsection
 
+
+@section('add')
+    <span>
+        <a class="btn btn-primary d-block btn-user w-100" href="/addcategories"
+            style="background: rgb(78,223,119);margin-left: 20px;margin-right: 20px;">
+            <i class="fa fa-plus" style="font-size: 15px;margin-right: 2px;">
+            </i>
+            Add
+        </a>
+    </span>
+@endsection
+
 @section('pagination')
     <div class="col-md-6 align-self-center">
         <p id="dataTable_info" class="dataTables_info" role="status" aria-live="polite">
