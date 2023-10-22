@@ -13,14 +13,14 @@ class BooksController extends Controller
         $data = books::all(); // ini buat di tampilkan di master ( master bisa filter data)
         //$dataA (ditampilin di admin A)
         //$dataB (ditampilin di admin B)
-        return view("books", compact("data"));
+        return view("books.books", compact("data"));
     }
 
     public function addbooks(){
         $categoriesdata = categories::all();
         $storesdata = store::all();
         //dd($storesdata);
-        return view("addbooks", compact("categoriesdata", "storesdata"));
+        return view("books.addbooks", compact("categoriesdata", "storesdata"));
     }
 
     public function insertbooks(Request $request){
@@ -34,7 +34,7 @@ class BooksController extends Controller
         //dd($data);
         $categoriesdata = categories::all();
         $storesdata = store::all();
-        return view("editbooks", compact("data", "categoriesdata", "storesdata"));
+        return view("books.editbooks", compact("data", "categoriesdata", "storesdata"));
     }
 
     public function updatebooks(Request $request, $id){
