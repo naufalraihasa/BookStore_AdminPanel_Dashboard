@@ -47,28 +47,30 @@
             @endphp
 
             @foreach ($data as $row)
-                <tr>
-                    <th scope="row">{{ $number++ }}</th>
-                    {{-- <td>{{ $row->category_id }}</td> --}}
-                    <td>{{ $row->category->category_name }}</td>
-                    <td>{{ $row->book_name }}</td>
-                    <td>{{ $row->book_description }}</td>
-                    <td>{{ $row->book_stock }}</td>
-                    {{-- <td>{{ $row->store_id }}</td> --}}
-                    <td>{{ $row->stores->store_name }}</td>
-                    <td>
-                        <div class="btn-group" role="group">
-                            <a class="btn btn-primary" href="/editbooks/{{ $row->id }}">
-                                <i class="fa fa-pencil"></i>
-                                Edit
-                            </a>
-                            <a href="/deletebooks/{{ $row->id }}" class="btn btn-danger">
-                                <i class="fa fa-trash-o"></i>
-                                Delete
-                            </a>
-                        </div>
-                    </td>
-                </tr>
+                {{-- @if ($row->stores->store_name === 'A') --}}
+                    <tr>
+                        <th scope="row">{{ $number++ }}</th>
+                        {{-- <td>{{ $row->category_id }}</td> --}}
+                        <td>{{ $row->category->category_name }}</td>
+                        <td>{{ $row->book_name }}</td>
+                        <td>{{ $row->book_description }}</td>
+                        <td>{{ $row->book_stock }}</td>
+                        {{-- <td>{{ $row->store_id }}</td> --}}
+                        <td>{{ $row->stores->store_name }}</td>
+                        <td>
+                            <div class="btn-group" role="group">
+                                <a class="btn btn-primary" href="/editbooks/{{ $row->id }}">
+                                    <i class="fa fa-pencil"></i>
+                                    Edit
+                                </a>
+                                <a href="/deletebooks/{{ $row->id }}" class="btn btn-danger">
+                                    <i class="fa fa-trash-o"></i>
+                                    Delete
+                                </a>
+                            </div>
+                        </td>
+                    </tr>
+                {{-- @endif --}}
             @endforeach
         </tbody>
         <tfoot>
