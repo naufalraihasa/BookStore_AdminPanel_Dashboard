@@ -99,6 +99,14 @@
                                     </div>
                                 </div>
                                 <div class="row">
+                                    <div class="form-outline">
+                                        <label class="form-label" for="typeNumber"><strong>Book
+                                                Price</strong></label>
+                                        <input type="number" id="typeNumber" name="book_price"
+                                            value="{{ $data->book_price }}" class="form-control" />
+                                    </div>
+                                </div>
+                                <div class="row">
                                     <div class="col">
                                         <label class="form-label" for=""><strong>Store Location</strong></label>
                                         <select class="form-select mb-3" name="store_id"
@@ -114,7 +122,7 @@
                                 </div>
                                 <div class="mb-3"><button class="btn btn-primary btn-sm"
                                         type="submit"
-                                        style="background: rgb(28,200,138);width: 68.0625px;height: 38.6px;font-size: 16px;">Add</button>
+                                        style="background: rgb(28,200,138);width: 68.0625px;height: 38.6px;font-size: 16px;">Edit</button>
                                 </div>
                             </form>
                         </div>

@@ -48,6 +48,12 @@
                                     </div>
                                 </div>
                                 <div class="row">
+                                    <div class="form-outline">
+                                        <label class="form-label" for="typeNumber"><strong>Book Price</strong></label>
+                                        <input type="number" id="typeNumber" name="book_price" class="form-control" />
+                                    </div>
+                                </div>
+                                <div class="row">
                                     <div class="col">
                                         <label class="form-label" for=""><strong>Store Location</strong></label>
                                         <select class="form-select mb-3" name="store_id" aria-label="Default select example">

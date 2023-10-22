@@ -35,7 +35,7 @@
                 <th>Book Name</th>
                 <th>Book Description</th>
                 <th>Book Stock</th>
-                {{-- <th>Store ID</th> --}}
+                <th>Book Price</th>
                 <th>Store Name</th>
                 <th>Action</th>
             </tr>
@@ -55,7 +55,7 @@
                         <td>{{ $row->book_name }}</td>
                         <td>{{ $row->book_description }}</td>
                         <td>{{ $row->book_stock }}</td>
-                        {{-- <td>{{ $row->store_id }}</td> --}}
+                        <td>{{ $row->book_price}}</td>
                         <td>{{ $row->stores->store_name }}</td>
                         <td>
                             <div class="btn-group" role="group">
@@ -98,6 +98,11 @@
                 <th>
                     <strong>
                         Book Stock
+                    </strong>
+                </th>
+                <th>
+                    <strong>
+                        Book Price
                     </strong>
                 </th>
                 <th>

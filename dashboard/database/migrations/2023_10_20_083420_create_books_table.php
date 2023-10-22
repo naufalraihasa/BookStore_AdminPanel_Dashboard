@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('book_name');
             $table->string('book_description');
             $table->integer('book_stock');
+            $table->integer('book_price');
             $table->unsignedBigInteger('store_id');
         });
 
