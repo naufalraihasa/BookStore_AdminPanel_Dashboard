@@ -25,6 +25,10 @@ Route::get('/', function () {
 Route::get('/', [LoginController::class,'login'])->name('login');
 Route::get('/register', [LoginController::class,'register'])->name('register');
 
+// Route::get('/analytics', function () {
+//     return view('analytics');
+// });
+
 Route::get('/analytics', [AnalyticsController::class, "index"])->name("books");
 Route::get('/analytics_store_A', [AnalyticsController::class, "analyticsA"])->name("analyticsA");
 Route::get('/analytics_store_B', [AnalyticsController::class, "analyticsB"])->name("analyticsB");
