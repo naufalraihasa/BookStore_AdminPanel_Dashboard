@@ -18,14 +18,19 @@ use App\Http\Controllers\CategoriesController;
 |
 */
 
-Route::get('/', function () {
-    return view('login');
-});
+// Route::get('/', function () {
+//     return view('login');
+// });
 
 Route::get('/', [LoginController::class,'login'])->name('login');
-Route::get('/register', [LoginController::class,'register'])->name('register');
+Route::post('/authentication', [LoginController::class,'authentication'])->name('authentication');
+Route::get('/logout', [LoginController::class,'logout'])->name('logout');
 
-Route::get('/analytics', [AnalyticsController::class, "index"])->name("books");
+
+Route::get('/add_user', [LoginController::class,'add_user'])->name('add_user');
+Route::post('/add_user_input', [LoginController::class,'add_user_input'])->name('add_user_input');
+
+Route::get('/analytics', [AnalyticsController::class, "index"])->name("analytics")->middleware('auth');
 Route::get('/analytics_store_A', [AnalyticsController::class, "analyticsA"])->name("analyticsA");
 Route::get('/analytics_store_B', [AnalyticsController::class, "analyticsB"])->name("analyticsB");
 
