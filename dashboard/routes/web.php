@@ -17,7 +17,11 @@ use App\Http\Controllers\CategoriesController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('login');
+});
+
+Route::get('/analytics', function () {
+    return view('analytics');
 });
 
 Route::get('/stores', [StoreController::class, "index"])->name("stores");
