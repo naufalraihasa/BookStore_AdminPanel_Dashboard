@@ -33,6 +33,8 @@ Route::post('/updatecategories/{id}', [CategoriesController::class, "updatecateg
 Route::get('/deletecategories/{id}', [CategoriesController::class, "deletecategories"])->name("deletecategories");
 
 Route::get('/books', [BooksController::class, "index"])->name("books");
+Route::get('/books_store_A', [BooksController::class, "booksA"])->name("booksA");
+Route::get('/books_store_B', [BooksController::class, "booksB"])->name("booksB");
 
 Route::get('/addbooks', [BooksController::class, "addbooks"])->name("addbooks");
 

@@ -16,6 +16,20 @@ class BooksController extends Controller
         return view("books.books", compact("data"));
     }
 
+    public function booksA(){
+        $data = books::all(); // ini buat di tampilkan di master ( master bisa filter data)
+        //$dataA (ditampilin di admin A)
+        //$dataB (ditampilin di admin B)
+        return view("books.booksA", compact("data"));
+    }
+
+    public function booksB(){
+        $data = books::all(); // ini buat di tampilkan di master ( master bisa filter data)
+        //$dataA (ditampilin di admin A)
+        //$dataB (ditampilin di admin B)
+        return view("books.booksB", compact("data"));
+    }
+
     public function addbooks(){
         $categoriesdata = categories::all();
         $storesdata = store::all();
