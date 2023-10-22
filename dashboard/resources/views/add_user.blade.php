@@ -30,6 +30,7 @@
                                         @csrf
                                         <div class="mb-3"><input class="form-control form-control-user" type="text" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Name" name="name"></div>
                                         <div class="mb-3"><input class="form-control form-control-user"  type="email" id="exampleInputEmail" placeholder="Email address" name="email"></div>
+                                        <div class="mb-3"><input class="form-control form-control-user"  type="text" id="exampleInputEmail" placeholder="User Role" name="role"></div>
                                         <div class="mb-3"><input class="form-control form-control-user" type="password" id="exampleInputPassword" placeholder="Password" name="password"></div>
                                         <div class="mb-3">
                                             <div class="custom-control custom-checkbox small">

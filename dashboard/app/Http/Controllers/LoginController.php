@@ -13,12 +13,30 @@ class LoginController extends Controller
         return view("login");
     }
 
-    public function authentication(Request $request){
-        if(Auth::attempt($request->only('email','password'))){
-            return redirect('/analytics');
-        }else{
-            return redirect('/');
+    // public function authentication(Request $request){
+    //     if(Auth::attempt($request->only('email','password'))){
+    //         return redirect('/analytics');
+    //     }else{
+    //         return redirect('/');
+    //     }
+    // }
+
+    
+    public function authentication(Request $request) {
+        if (Auth::attempt($request->only('email', 'password'))) {
+            // Cek peran pengguna yang berhasil masuk
+            $user = Auth::user();
+    
+            if ($user->role == 'master') {
+                return redirect('/analytics');
+            } elseif ($user->role == 'userA') {
+                return redirect('/analytics_store_A');
+            } elseif ($user->role == 'userB') {
+                return redirect('/analytics_store_B');
+            }
         }
+    
+        return redirect('/');
     }
 
     public function add_user(){
@@ -29,6 +47,7 @@ class LoginController extends Controller
         User::create([
             'name' => $request->name,
             'email'=> $request->email,
+            'role'=> $request->role,
             'password'=> bcrypt($request->password),
             'remember_token'=> Str::random(60),
         ]);
