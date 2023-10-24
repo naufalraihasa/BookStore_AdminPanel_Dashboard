@@ -13,8 +13,7 @@
 
 @section('content')
     <div class="d-sm-flex justify-content-between align-items-center mb-4">
-        <h3 class="text-dark mb-0">Dashboard Analytics</h3><a class="btn btn-primary btn-sm d-none d-sm-inline-block"
-            role="button" href="#"><i class="fas fa-download fa-sm text-white-50"></i>&nbsp;Generate Report</a>
+        <h3 class="text-dark mb-0">Dashboard Analytics</h3>
     </div>
     <div class="row">
         <div class="col-md-6 col-xl-3 mb-4">
@@ -24,7 +23,7 @@
                         <div class="col me-2">
                             <div class="text-uppercase text-primary fw-bold text-xs mb-1"><span>Total Books</span>
                             </div>
-                            <div class="text-dark fw-bold h5 mb-0"><span>{{$totalbooks}}</span></div>
+                            <div class="text-dark fw-bold h5 mb-0"><span>{{ $totalbooks }}</span></div>
                         </div>
                         <div class="col-auto"><i class="fas fa-calendar fa-2x text-gray-300"></i></div>
                     </div>
@@ -111,7 +110,7 @@
         <div class="col-lg-5 col-xl-4">
             <div class="card shadow mb-4">
                 <div class="card-header d-flex justify-content-between align-items-center">
-                    <h6 class="text-primary fw-bold m-0">Revenue Sources</h6>
+                    <h6 class="text-primary fw-bold m-0">Books Genre</h6>
                     <div class="dropdown no-arrow"><button class="btn btn-link btn-sm dropdown-toggle" aria-expanded="false"
                             data-bs-toggle="dropdown" type="button"><i
                                 class="fas fa-ellipsis-v text-gray-400"></i></button>
@@ -126,13 +125,27 @@
                     </div>
                 </div>
                 <div class="card-body">
-                    <div class="chart-area"><canvas
+                    {{-- <div class="chart-area"><canvas
                             data-bss-chart="{&quot;type&quot;:&quot;doughnut&quot;,&quot;data&quot;:{&quot;labels&quot;:[&quot;Direct&quot;,&quot;Social&quot;,&quot;Referral&quot;],&quot;datasets&quot;:[{&quot;label&quot;:&quot;&quot;,&quot;backgroundColor&quot;:[&quot;#4e73df&quot;,&quot;#1cc88a&quot;,&quot;#36b9cc&quot;],&quot;borderColor&quot;:[&quot;#ffffff&quot;,&quot;#ffffff&quot;,&quot;#ffffff&quot;],&quot;data&quot;:[&quot;50&quot;,&quot;30&quot;,&quot;15&quot;]}]},&quot;options&quot;:{&quot;maintainAspectRatio&quot;:false,&quot;legend&quot;:{&quot;display&quot;:false,&quot;labels&quot;:{&quot;fontStyle&quot;:&quot;normal&quot;}},&quot;title&quot;:{&quot;fontStyle&quot;:&quot;normal&quot;}}}"></canvas>
                     </div>
                     <div class="text-center small mt-4"><span class="me-2"><i
                                 class="fas fa-circle text-primary"></i>&nbsp;Direct</span><span class="me-2"><i
                                 class="fas fa-circle text-success"></i>&nbsp;Social</span><span class="me-2"><i
-                                class="fas fa-circle text-info"></i>&nbsp;Refferal</span></div>
+                                class="fas fa-circle text-info"></i>&nbsp;Refferal</span>
+                    </div> --}}
+                    <form action="{{ route('analytics.filter') }}" method="GET" class="form-inline">
+                        <div class="form-group">
+                            <label for="store" class="mr-2 mb-2">Select Store:</label>
+                            <select name="store" id="store" class="form-control mb-2">
+                                <option value="1" {{ request('store') == 1 ? 'selected' : '' }}>Store 1</option>
+                                <option value="2" {{ request('store') == 2 ? 'selected' : '' }}>Store 2</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-primary ml-2">Apply Filter</button>
+                    </form>
+                    
+                    
+                    <div id="piechart" style="width: 350px; height: 250px;"></div>
                 </div>
             </div>
         </div>

@@ -5,12 +5,34 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>Dashboard - Brand</title>
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{asset('bootstrap/css/bootstrap.min.css')}}">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i&amp;display=swap">
-    <link rel="stylesheet" href="assets/fonts/fontawesome-all.min.css">
-    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
-    <link rel="stylesheet" href="assets/fonts/fontawesome5-overrides.min.css">
-    <link rel="stylesheet" href="assets/css/Tricky-Grid---2-Column-on-Desktop--Tablet-Flip-Order-of-12-Column-rows-on-Mobile.css">
+    <link rel="stylesheet" href="{{ asset('fonts/fontawesome-all.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('fonts/font-awesome.min.css') }}"> 
+    <link rel="stylesheet" href="{{ asset('fonts/fontawesome5-overrides.min.css') }}"> 
+    <link rel="stylesheet" href="{{ asset('css/Tricky-Grid---2-Column-on-Desktop--Tablet-Flip-Order-of-12-Column-rows-on-Mobile.css') }}">
+
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+          ['Category Name', 'Books Count'],
+          <?php echo $pieChartData; ?>
+        ]);
+
+        var options = {
+          title: ''
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+        chart.draw(data, options);
+      }
+    </script>
 </head>
 
 <body id="page-top">
@@ -159,7 +181,7 @@
                                         aria-expanded="false" data-bs-toggle="dropdown" href="#"><span
                                             class="d-none d-lg-inline me-2 text-gray-600 small">{{Auth::user()->name}}</span><img
                                             class="border rounded-circle img-profile"
-                                            src="assets/img/avatars/4.jpg"></a>
+                                            src="{{ asset('assets/img/avatars/4.jpg') }}"></a>
                                     <div class="dropdown-menu shadow dropdown-menu-end animated--grow-in"><a
                                             class="dropdown-item" href="#"><i
                                                 class="fas fa-user fa-sm fa-fw me-2 text-gray-400"></i>&nbsp;Profile</a><a
@@ -411,10 +433,10 @@
             </footer>
         </div><a class="border rounded d-inline scroll-to-top" href="#page-top"><i class="fas fa-angle-up"></i></a>
     </div>
-    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-    <script src="assets/js/chart.min.js"></script>
-    <script src="assets/js/bs-init.js"></script>
-    <script src="assets/js/theme.js"></script>
+    <script src="{{ asset('bootstrap/js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('js/chart.min.js') }}"></script>
+    <script src="{{ asset('js/bs-init.js') }}"></script>
+    <script src="{{ asset('js/theme.js') }}"></script>
 </body>
 
 </html>

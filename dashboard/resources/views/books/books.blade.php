@@ -9,8 +9,8 @@
 @endsection
 
 @section('filter')
-    <div class="col-md-6 text-nowrap">
-        <div id="dataTable_length" class="dataTables_length" aria-controls="dataTable">
+    <div class="col-md-6 text-nowrap d-flex gap-5">
+        <div id="dataTable_length" class="dataTables_length ms-5" aria-controls="dataTable">
             <label class="form-label">Show&nbsp;<select class="d-inline-block form-select form-select-sm">
                     <option value="10" selected="">10</option>
                     <option value="25">25</option>
@@ -18,7 +18,30 @@
                     <option value="100">100</option>
                 </select>&nbsp;</label>
         </div>
+
+        <div class="ml-2 ms-5">
+            <label class="form-label">Option 2&nbsp;
+                <select class="d-inline-block form-select form-select-sm">
+                    <option value="A">A</option>
+                    <option value="B">B</option>
+                    <option value="C">C</option>
+                    <option value="D">D</option>
+                </select>
+            </label>
+        </div>
+        
+        <div class="ml-2 ms-5">
+            <label class="form-label">Option 2&nbsp;
+                <select class="d-inline-block form-select form-select-sm">
+                    <option value="A">A</option>
+                    <option value="B">B</option>
+                    <option value="C">C</option>
+                    <option value="D">D</option>
+                </select>
+            </label>
+        </div>
     </div>
+
     <div class="col-md-6">
         <div class="text-md-end dataTables_filter" id="dataTable_filter"><label class="form-label"><input type="search"
                     class="form-control form-control-sm" aria-controls="dataTable" placeholder="Search"></label></div>
@@ -48,28 +71,28 @@
 
             @foreach ($data as $row)
                 {{-- @if ($row->stores->store_name === 'A') --}}
-                    <tr>
-                        <th scope="row">{{ $number++ }}</th>
-                        {{-- <td>{{ $row->category_id }}</td> --}}
-                        <td>{{ $row->category->category_name }}</td>
-                        <td>{{ $row->book_name }}</td>
-                        <td>{{ $row->book_description }}</td>
-                        <td>{{ $row->book_stock }}</td>
-                        <td>{{ $row->book_price}}</td>
-                        <td>{{ $row->stores->store_name }}</td>
-                        <td>
-                            <div class="btn-group" role="group">
-                                <a class="btn btn-primary" href="/editbooks/{{ $row->id }}">
-                                    <i class="fa fa-pencil"></i>
-                                    Edit
-                                </a>
-                                <a href="/deletebooks/{{ $row->id }}" class="btn btn-danger">
-                                    <i class="fa fa-trash-o"></i>
-                                    Delete
-                                </a>
-                            </div>
-                        </td>
-                    </tr>
+                <tr>
+                    <th scope="row">{{ $number++ }}</th>
+                    {{-- <td>{{ $row->category_id }}</td> --}}
+                    <td>{{ $row->category->category_name }}</td>
+                    <td>{{ $row->book_name }}</td>
+                    <td>{{ $row->book_description }}</td>
+                    <td>{{ $row->book_stock }}</td>
+                    <td>{{ $row->book_price }}</td>
+                    <td>{{ $row->stores->store_name }}</td>
+                    <td>
+                        <div class="btn-group" role="group">
+                            <a class="btn btn-primary" href="/editbooks/{{ $row->id }}">
+                                <i class="fa fa-pencil"></i>
+                                Edit
+                            </a>
+                            <a href="/deletebooks/{{ $row->id }}" class="btn btn-danger">
+                                <i class="fa fa-trash-o"></i>
+                                Delete
+                            </a>
+                        </div>
+                    </td>
+                </tr>
                 {{-- @endif --}}
             @endforeach
         </tbody>
