@@ -105,7 +105,7 @@
 @endsection
 
 @section('pagination')
-    <div class="col-md-6 align-self-center">
+    {{-- <div class="col-md-6 align-self-center">
         <p id="dataTable_info" class="dataTables_info" role="status" aria-live="polite">
             Showing 1 to 10 of 27</p>
     </div>
@@ -121,6 +121,9 @@
                             aria-hidden="true">»</span></a></li>
             </ul>
         </nav>
+    </div> --}}
+    <div class="col mt-3">
+        {{ $data->appends($_GET)->links('pagination::bootstrap-5') }}
     </div>
 @endsection
 

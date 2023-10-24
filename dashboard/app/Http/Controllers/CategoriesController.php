@@ -7,10 +7,16 @@ use Illuminate\Http\Request;
 
 class CategoriesController extends Controller
 {
+    // public function index(){
+    //     $data = categories::all();
+    //     return view("categories.categories", compact("data"));
+    // }
+
     public function index(){
-        $data = categories::all();
+        $data = categories::paginate(10); // Paginate the categories with 10 items per page
         return view("categories.categories", compact("data"));
     }
+    
 
 
     public function addcategories(){

@@ -9,7 +9,7 @@
 @endsection
 
 @section('filter')
-    <div class="col-md-6 text-nowrap d-flex gap-5">
+    {{-- <div class="col-md-2 text-nowrap">
         <div id="dataTable_length" class="dataTables_length ms-5" aria-controls="dataTable">
             <label class="form-label">Show&nbsp;<select class="d-inline-block form-select form-select-sm">
                     <option value="10" selected="">10</option>
@@ -18,31 +18,57 @@
                     <option value="100">100</option>
                 </select>&nbsp;</label>
         </div>
-
-        <div class="ml-2 ms-5">
-            <label class="form-label">Option 2&nbsp;
-                <select class="d-inline-block form-select form-select-sm">
-                    <option value="A">A</option>
-                    <option value="B">B</option>
-                    <option value="C">C</option>
-                    <option value="D">D</option>
-                </select>
-            </label>
-        </div>
-
-        <div class="ml-2 ms-5">
-            <label class="form-label">Option 2&nbsp;
-                <select class="d-inline-block form-select form-select-sm">
-                    <option value="A">A</option>
-                    <option value="B">B</option>
-                    <option value="C">C</option>
-                    <option value="D">D</option>
-                </select>
-            </label>
-        </div>
     </div>
 
-    <div class="col-md-6">
+    <div class="col-md-2 text-nowrap">
+        <div id="dataTable_length" class="dataTables_length ms-5" aria-controls="dataTable">
+            <label class="form-label">Show&nbsp;<select class="d-inline-block form-select form-select-sm">
+                    <option value="10" selected="">10</option>
+                    <option value="25">25</option>
+                    <option value="50">50</option>
+                    <option value="100">100</option>
+                </select>&nbsp;</label>
+        </div>
+    </div> --}}
+
+    <div class="col-6">
+        <form action="" method="GET">
+            <div class="row">
+                <div class="col-md-3">
+                    <div id="dataTable_length" class="dataTables_length ms-2" aria-controls="dataTable">
+                        <label class="form-label">Store&nbsp; 
+                            <select class="d-inline-block form-select form-select-sm" name="store_id">
+                                <option value="" {{ Request::get('store_id') == '' ? 'selected' : '' }}>Select Store</option>
+                                <option value="1" {{ Request::get('store_id') == '1' ? 'selected' : '' }} selected="">A</option>
+                                <option value="2" {{ Request::get('store_id') == '2' ? 'selected' : '' }}>B</option>
+                            </select>&nbsp;
+                        </label>
+                    </div>
+                </div>
+                <div class="col-md-5">
+                    <div id="dataTable_length" class="dataTables_length ms-2" aria-controls="dataTable">
+                        <label class="form-label">Genre&nbsp; 
+                            <select class="d-inline-block form-select form-select-sm" name="category_id">
+                                <option value="" {{Request::get('category_id') == '' ? 'selected':''}}>Select Category</option>
+                                <option value="2" {{Request::get('category_id') == '2' ? 'selected':''}}>Science Fiction</option>
+                                <option value="3" {{Request::get('category_id') == '3' ? 'selected':''}}>Fantasy</option>
+                                <option value="4" {{Request::get('category_id') == '4' ? 'selected':''}}>Romance</option>
+                                <option value="1" {{Request::get('category_id') == '1' ? 'selected':''}}>Mystery</option>
+                                <option value="5" {{Request::get('category_id') == '5' ? 'selected':''}}>Non-Fiction</option>
+                            </select>&nbsp;
+                        </label>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <br/>
+                    <button type="submit" class="btn btn-primary">Filter</button>
+                    <a href="{{ route('books') }}" class="btn btn-secondary">Reset</a>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <div class="col-md-6 mt-4">
         <div class="text-md-end dataTables_filter" id="dataTable_filter">
             <form action="/books" method="GET">
                 <label class="form-label">
@@ -180,7 +206,8 @@
                             aria-hidden="true">»</span></a></li>
             </ul>
         </nav> --}}
-        {{ $data->links('pagination::bootstrap-5') }}
+        {{ $data->appends($_GET)->links('pagination::bootstrap-5') }}
+        {{-- {{ $users->appends($_GET)->links() }} --}}
     </div>
 @endsection
 
