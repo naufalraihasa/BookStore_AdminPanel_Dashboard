@@ -10,23 +10,20 @@ use Illuminate\Http\Request;
 class BooksController extends Controller
 {
     public function index(){
-        $data = books::all(); // ini buat di tampilkan di master ( master bisa filter data)
-        //$dataA (ditampilin di admin A)
-        //$dataB (ditampilin di admin B)
+        // $data = books::all();
+        $data = books::Paginate(10); // ini buat di tampilkan di master ( master bisa filter data)
         return view("books.books", compact("data"));
     }
 
     public function booksA(){
-        $data = books::all(); // ini buat di tampilkan di master ( master bisa filter data)
-        //$dataA (ditampilin di admin A)
-        //$dataB (ditampilin di admin B)
+        // $data = books::all();
+        $data = books::where('store_id', '1')->paginate(10);// ini buat di tampilkan di master ( master bisa filter data)
         return view("books.booksA", compact("data"));
     }
 
     public function booksB(){
-        $data = books::all(); // ini buat di tampilkan di master ( master bisa filter data)
-        //$dataA (ditampilin di admin A)
-        //$dataB (ditampilin di admin B)
+        // $data = books::all();
+        $data = books::where('store_id', '2')->paginate(10);; // ini buat di tampilkan di master ( master bisa filter data)
         return view("books.booksB", compact("data"));
     }
 

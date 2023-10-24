@@ -50,7 +50,7 @@
     <table class="table my-0" id="dataTable">
         <thead>
             <tr>
-                <th>ID</th>
+                <th>No</th>
                 {{-- <th>Category ID</th> --}}
                 <th>Category</th>
                 <th>Book Name</th>
@@ -67,10 +67,10 @@
                 $number = 1;
             @endphp
 
-            @foreach ($data as $row)
-                @if ($row->stores->store_name === 'B')
+            @foreach ($data as $index => $row)
+                {{-- @if ($row->stores->store_name === 'B') --}}
                     <tr>
-                        <th scope="row">{{ $number++ }}</th>
+                        <th scope="row">{{ $index + $data->firstItem() }}</th>
                         {{-- <td>{{ $row->category_id }}</td> --}}
                         <td>{{ $row->category->category_name }}</td>
                         <td>{{ $row->book_name }}</td>
@@ -91,14 +91,14 @@
                             </div> --}}
                         </td>
                     </tr>
-                @endif
+                {{-- @endif --}}
             @endforeach
         </tbody>
         <tfoot>
             <tr>
                 <th>
                     <strong>
-                        ID
+                        No
                     </strong>
                 </th>
                 <th>
@@ -149,7 +149,7 @@
 
 
 @section('pagination')
-    <div class="col-md-6 align-self-center">
+    {{-- <div class="col-md-6 align-self-center">
         <p id="dataTable_info" class="dataTables_info" role="status" aria-live="polite">
             Showing 1 to 10 of 27</p>
     </div>
@@ -165,5 +165,6 @@
                             aria-hidden="true">»</span></a></li>
             </ul>
         </nav>
-    </div>
+    </div> --}}
+    {{$data->links('pagination::bootstrap-5')}}
 @endsection
