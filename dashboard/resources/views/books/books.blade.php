@@ -86,7 +86,8 @@
                                 <i class="fa fa-pencil"></i>
                                 Edit
                             </a>
-                            <a href="/deletebooks/{{ $row->id }}" class="btn btn-danger">
+                            {{-- href="/deletebooks/{{ $row->id }}" --}}
+                            <a href="#" class="btn btn-danger delete" data-id="{{$row->id}}" data-nama="{{$row->book_name}}">
                                 <i class="fa fa-trash-o"></i>
                                 Delete
                             </a>
@@ -173,4 +174,41 @@
             </ul>
         </nav>
     </div>
+@endsection
+
+@section('script')
+    $('.delete').click(function() {
+        var booksid = $(this).attr('data-id');
+        var booksname = $(this).attr('data-nama');
+        Swal.fire({
+            title: 'Apakah yakin untuk menghapus data ?',
+            text: "Kamu akan menghapus data buku " + booksname + " ",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                window.location = "/deletebooks/" + booksid + " "
+                Swal.fire(
+                    'Berhasil dihapus !',
+                    'Data buku ' + booksname + ' sudah dihapus',
+                    'success'
+                )
+            } else {
+                Swal.fire(
+                    'Data tidak jadi dihapus',
+                    'Data buku ' + booksname + ' tidak jadi dihapus',
+                    'error'
+                )
+            }
+        });
+    });
+
+    // Set a success toast, with a title
+    @if (Session::has('success'))
+        toastr.options.positionClass = 'toast-bottom-left';
+        toastr.success("{{ Session::get('success') }}");
+    @endif
 @endsection

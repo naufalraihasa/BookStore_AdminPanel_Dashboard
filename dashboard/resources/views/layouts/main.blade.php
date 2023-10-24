@@ -13,13 +13,18 @@
     <link rel="stylesheet" href="assets/fonts/fontawesome5-overrides.min.css">
     <link rel="stylesheet"
         href="assets/css/Tricky-Grid---2-Column-on-Desktop--Tablet-Flip-Order-of-12-Column-rows-on-Mobile.css">
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/sweetalert2@10.10.1/dist/sweetalert2.min.css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css"
+        integrity="sha512-3pIirOrwegjM6erE5gPSwkUzO+3cTjpnV9lexlNZqvupR64iZBnOOTiiLPb9M36zpMScbmUNIcHUqKD47M719g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body id="page-top">
     <div id="wrapper">
         <nav class="navbar align-items-start sidebar sidebar-dark accordion bg-gradient-primary p-0 navbar-dark">
             <div class="container-fluid d-flex flex-column p-0"><a
-                    class="navbar-brand d-flex justify-content-center align-items-center sidebar-brand m-0" href="#">
+                    class="navbar-brand d-flex justify-content-center align-items-center sidebar-brand m-0"
+                    href="#">
                     {{-- <div class="sidebar-brand-icon rotate-n-15"><i class="fas fa-laugh-wink"></i></div> --}}
                     <div class="sidebar-brand-text mx-3"><span>Analytics</span></div>
                 </a>
@@ -29,10 +34,8 @@
                                 class="far fa-chart-bar"></i><span>Analytics</span></a></li>
                     <li class="nav-item">
                         <a class="nav-link" href="user.html"><i class="fas fa-table"></i><span>User</span></a>
-                        <a class="nav-link" href="/books"><i
-                                class="far fa-list-alt"></i><span>Books</span></a>
-                        <a class="nav-link" href="/categories"><i
-                                class="far fa-list-alt"></i><span>Category</span></a>
+                        <a class="nav-link" href="/books"><i class="far fa-list-alt"></i><span>Books</span></a>
+                        <a class="nav-link" href="/categories"><i class="far fa-list-alt"></i><span>Category</span></a>
                     </li>
                     <li class="nav-item"></li>
                     <li class="nav-item"></li>
@@ -93,7 +96,8 @@
                                                 <p>Spending Alert: We've noticed unusually high spending for your
                                                     account.</p>
                                             </div>
-                                        </a><a class="dropdown-item text-center small text-gray-500" href="#">Show All
+                                        </a><a class="dropdown-item text-center small text-gray-500"
+                                            href="#">Show All
                                             Alerts</a>
                                     </div>
                                 </div>
@@ -121,7 +125,8 @@
                                                 <div class="status-indicator"></div>
                                             </div>
                                             <div class="fw-bold">
-                                                <div class="text-truncate"><span>I have the photos that you ordered last
+                                                <div class="text-truncate"><span>I have the photos that you ordered
+                                                        last
                                                         month!</span></div>
                                                 <p class="small text-gray-500 mb-0">Jae Chun - 1d</p>
                                             </div>
@@ -147,7 +152,8 @@
                                                         if they aren't good...</span></div>
                                                 <p class="small text-gray-500 mb-0">Chicken the Dog · 2w</p>
                                             </div>
-                                        </a><a class="dropdown-item text-center small text-gray-500" href="#">Show All
+                                        </a><a class="dropdown-item text-center small text-gray-500"
+                                            href="#">Show All
                                             Alerts</a>
                                     </div>
                                 </div>
@@ -158,7 +164,7 @@
                             <li class="nav-item dropdown no-arrow">
                                 <div class="nav-item dropdown no-arrow"><a class="dropdown-toggle nav-link"
                                         aria-expanded="false" data-bs-toggle="dropdown" href="#"><span
-                                            class="d-none d-lg-inline me-2 text-gray-600 small">{{Auth::user()->name}}</span><img
+                                            class="d-none d-lg-inline me-2 text-gray-600 small">{{ Auth::user()->name }}</span><img
                                             class="border rounded-circle img-profile"
                                             src="assets/img/avatars/4.jpg"></a>
                                     <div class="dropdown-menu shadow dropdown-menu-end animated--grow-in"><a
@@ -169,7 +175,8 @@
                                             class="dropdown-item" href="#"><i
                                                 class="fas fa-list fa-sm fa-fw me-2 text-gray-400"></i>&nbsp;Activity
                                             log</a>
-                                        <div class="dropdown-divider"></div><a class="dropdown-item" href="/logout"><i
+                                        <div class="dropdown-divider"></div><a class="dropdown-item"
+                                            href="/logout"><i
                                                 class="fas fa-sign-out-alt fa-sm fa-fw me-2 text-gray-400"></i>&nbsp;Logout</a>
                                     </div>
                                 </div>
@@ -182,11 +189,11 @@
                         {{-- <h3 class="text-dark mb-4">Category</h3> --}}
                         @yield('header')
                     </div>
-                    @if ($message = Session::get('success'))
-                    <div class="alert alert-info">
-                        <p>{{$message}}</p>
-                    </div>
-                    @endif
+                    {{-- @if ($message = Session::get('success'))
+                        <div class="alert alert-info">
+                            <p>{{ $message }}</p>
+                        </div>
+                    @endif --}}
                     <div class="card shadow">
                         <div class="card-header py-3">
                             {{-- <p class="text-primary m-0 fw-bold">Category Info</p> --}}
@@ -332,6 +339,16 @@
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="assets/js/bs-init.js"></script>
     <script src="assets/js/theme.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.16.6/dist/sweetalert2.all.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"
+        integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </body>
+
+<script>
+    @yield('script')
+</script>
 
 </html>
