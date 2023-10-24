@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\books;
 use App\Models\analytics;
 use Illuminate\Http\Request;
 
@@ -11,7 +12,8 @@ class AnalyticsController extends Controller
         // $data = analytics::all(); // ini buat di tampilkan di master ( master bisa filter data)
         //$dataA (ditampilin di admin A)
         //$dataB (ditampilin di admin B)
-        return view("analytics.analytics");
+        $totalbooks = books::count();
+        return view("analytics.analytics", compact('totalbooks'));
     }
 
     public function analyticsA(){
