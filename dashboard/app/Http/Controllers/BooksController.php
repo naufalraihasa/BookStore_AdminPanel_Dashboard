@@ -9,21 +9,45 @@ use Illuminate\Http\Request;
 
 class BooksController extends Controller
 {
-    public function index(){
+    public function index(Request $request){
+
+        if($request->has('search')){
+            $data = books::where('book_name', 'LIKE', '%' .$request->search. '%')->paginate(10);
+        }else{
+            $data = books::paginate(10);
+        }
+
         // $data = books::all();
-        $data = books::Paginate(10); // ini buat di tampilkan di master ( master bisa filter data)
+        // $data = books::Paginate(10); // ini buat di tampilkan di master ( master bisa filter data)
         return view("books.books", compact("data"));
     }
 
-    public function booksA(){
+    public function booksA(Request $request){
+        if($request->has("search")){
+            $data = books::where('store_id', 1)
+             ->where('book_name', 'LIKE', '%' . $request->search . '%')
+             ->paginate(10);
+        }else{
+            $data = books::where('store_id', '1')->paginate(10);
+        }
+
         // $data = books::all();
-        $data = books::where('store_id', '1')->paginate(10);// ini buat di tampilkan di master ( master bisa filter data)
+        // $data = books::where('store_id', '1')->paginate(10);// ini buat di tampilkan di master ( master bisa filter data)
         return view("books.booksA", compact("data"));
     }
 
-    public function booksB(){
+    public function booksB(Request $request){
+        if($request->has("search")) {
+            $data = books::where('store_id', 2)
+             ->where('book_name', 'LIKE', '%' . $request->search . '%')
+             ->paginate(10);
+        } else {
+            $data = books::where('store_id', '2')->paginate(10);
+        }
+
+
         // $data = books::all();
-        $data = books::where('store_id', '2')->paginate(10);; // ini buat di tampilkan di master ( master bisa filter data)
+        // $data = books::where('store_id', '2')->paginate(10);; // ini buat di tampilkan di master ( master bisa filter data)
         return view("books.booksB", compact("data"));
     }
 

@@ -41,8 +41,14 @@
         </div>
     </div>
     <div class="col-md-6">
-        <div class="text-md-end dataTables_filter" id="dataTable_filter"><label class="form-label"><input type="search"
-                    class="form-control form-control-sm" aria-controls="dataTable" placeholder="Search"></label></div>
+        <div class="text-md-end dataTables_filter" id="dataTable_filter">
+            <form action="/books_store_A" method="GET">
+                <label class="form-label">
+                    <input type="search" name="search" class="form-control form-control-sm" aria-controls="dataTable"
+                        placeholder="Search" value="{{ request('search') }}">
+                </label>
+            </form>
+        </div>
     </div>
 @endsection
 
