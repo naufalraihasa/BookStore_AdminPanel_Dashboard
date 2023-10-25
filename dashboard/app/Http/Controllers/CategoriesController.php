@@ -7,14 +7,20 @@ use Illuminate\Http\Request;
 
 class CategoriesController extends Controller
 {
+    // public function index(){
+    //     $data = categories::all();
+    //     return view("categories.categories", compact("data"));
+    // }
+
     public function index(){
-        $data = categories::all();
-        return view("categories", compact("data"));
+        $data = categories::paginate(10); // Paginate the categories with 10 items per page
+        return view("categories.categories", compact("data"));
     }
+    
 
 
     public function addcategories(){
-        return view("addcategories");
+        return view("categories.addcategories");
     }
 
     public function insertcategories(Request $request){
@@ -26,7 +32,7 @@ class CategoriesController extends Controller
     public function editcategories($id){
         $data = categories::find($id);
         //dd($data);
-        return view("editcategories", compact("data"));
+        return view("categories.editcategories", compact("data"));
     }
 
     public function updatecategories(Request $request, $id){

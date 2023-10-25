@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class books extends Model
+class analytics extends Model
 {
     use HasFactory;
 
@@ -25,13 +25,13 @@ class books extends Model
 
     public $timestamps = false;
     
-    public function category()
-    {
-        return $this->belongsTo(categories::class,'category_id','id');
-    }
+    // public function category()
+    // {
+    //     return $this->belongsTo(categories::class,'category_id','id');
+    // }
 
-    public function stores()
-    {
-        return $this->belongsTo(store::class,'store_id','id');
-    }
+    // public function stores()
+    // {
+    //     return $this->belongsTo(store::class,'store_id','id');
+    // }
 }
