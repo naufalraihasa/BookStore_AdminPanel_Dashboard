@@ -18,27 +18,7 @@
 <body id="page-top">
     <div id="wrapper">
         <nav class="navbar align-items-start sidebar sidebar-dark accordion bg-gradient-primary p-0 navbar-dark">
-            <div class="container-fluid d-flex flex-column p-0"><a
-                    class="navbar-brand d-flex justify-content-center align-items-center sidebar-brand m-0"
-                    href="#">
-                    <div class="sidebar-brand-icon rotate-n-15"><i class="fas fa-laugh-wink"></i></div>
-                    <div class="sidebar-brand-text mx-3"><span>Brand</span></div>
-                </a>
-                <hr class="sidebar-divider my-0">
-                <ul class="navbar-nav text-light" id="accordionSidebar">
-                    <li class="nav-item"><a class="nav-link" href="analytics.html"><i
-                                class="far fa-chart-bar"></i><span>Analytics</span></a></li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="user.html"><i class="fas fa-table"></i><span>User</span></a>
-                        <a class="nav-link" href="/books"><i class="far fa-list-alt"></i><span>Books</span></a>
-                        <a class="nav-link" href="/categories"><i class="far fa-list-alt"></i><span>Category</span></a>
-                    </li>
-                    <li class="nav-item"></li>
-                    <li class="nav-item"></li>
-                </ul>
-                <div class="text-center d-none d-md-inline"><button class="btn rounded-circle border-0"
-                        id="sidebarToggle" type="button"></button></div>
-            </div>
+            @yield('sidebar')
         </nav>
         <div class="d-flex flex-column" id="content-wrapper">
             <div id="content">
@@ -92,8 +72,7 @@
                                                 <p>Spending Alert: We've noticed unusually high spending for your
                                                     account.</p>
                                             </div>
-                                        </a><a class="dropdown-item text-center small text-gray-500"
-                                            href="#">Show All
+                                        </a><a class="dropdown-item text-center small text-gray-500" href="#">Show All
                                             Alerts</a>
                                     </div>
                                 </div>
@@ -121,8 +100,7 @@
                                                 <div class="status-indicator"></div>
                                             </div>
                                             <div class="fw-bold">
-                                                <div class="text-truncate"><span>I have the photos that you ordered
-                                                        last
+                                                <div class="text-truncate"><span>I have the photos that you ordered last
                                                         month!</span></div>
                                                 <p class="small text-gray-500 mb-0">Jae Chun - 1d</p>
                                             </div>
@@ -148,8 +126,7 @@
                                                         if they aren't good...</span></div>
                                                 <p class="small text-gray-500 mb-0">Chicken the Dog · 2w</p>
                                             </div>
-                                        </a><a class="dropdown-item text-center small text-gray-500"
-                                            href="#">Show All
+                                        </a><a class="dropdown-item text-center small text-gray-500" href="#">Show All
                                             Alerts</a>
                                     </div>
                                 </div>
@@ -160,7 +137,7 @@
                             <li class="nav-item dropdown no-arrow">
                                 <div class="nav-item dropdown no-arrow"><a class="dropdown-toggle nav-link"
                                         aria-expanded="false" data-bs-toggle="dropdown" href="#"><span
-                                            class="d-none d-lg-inline me-2 text-gray-600 small">Valerie Luna</span><img
+                                            class="d-none d-lg-inline me-2 text-gray-600 small">{{Auth::user()->name}}</span><img
                                             class="border rounded-circle img-profile"
                                             src="assets/img/avatars/4.jpg"></a>
                                     <div class="dropdown-menu shadow dropdown-menu-end animated--grow-in"><a
@@ -171,8 +148,7 @@
                                             class="dropdown-item" href="#"><i
                                                 class="fas fa-list fa-sm fa-fw me-2 text-gray-400"></i>&nbsp;Activity
                                             log</a>
-                                        <div class="dropdown-divider"></div><a class="dropdown-item"
-                                            href="#"><i
+                                        <div class="dropdown-divider"></div><a class="dropdown-item" href="/logout"><i
                                                 class="fas fa-sign-out-alt fa-sm fa-fw me-2 text-gray-400"></i>&nbsp;Logout</a>
                                     </div>
                                 </div>
@@ -181,19 +157,23 @@
                     </div>
                 </nav>
                 <div class="container-fluid">
-                    <h3 class="text-dark mb-4">Category</h3>
+                    <div class="row">
+                        {{-- <h3 class="text-dark mb-4">Category</h3> --}}
+                        @yield('header')
+                    {{-- </div>
                     @if ($message = Session::get('success'))
-                        <div class="alert alert-info">
-                            <p>{{ $message }}</p>
-                        </div>
-                    @endif
+                    <div class="alert alert-info">
+                        <p>{{$message}}</p>
+                    </div>
+                    @endif --}}
                     <div class="card shadow">
                         <div class="card-header py-3">
-                            <p class="text-primary m-0 fw-bold">Category Info</p>
+                            {{-- <p class="text-primary m-0 fw-bold">Category Info</p> --}}
+                            @yield('subheader')
                         </div>
                         <div class="card-body">
                             <div class="row">
-                                <div class="col-md-6 text-nowrap">
+                                {{-- <div class="col-md-6 text-nowrap">
                                     <div id="dataTable_length" class="dataTables_length" aria-controls="dataTable">
                                         <label class="form-label">Show&nbsp;<select
                                                 class="d-inline-block form-select form-select-sm">
@@ -201,59 +181,50 @@
                                                 <option value="25">25</option>
                                                 <option value="50">50</option>
                                                 <option value="100">100</option>
-                                            </select>&nbsp;</label>
-                                    </div>
+                                            </select>&nbsp;</label></div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="text-md-end dataTables_filter" id="dataTable_filter"><label
-                                            class="form-label"><input type="search"
-                                                class="form-control form-control-sm" aria-controls="dataTable"
-                                                placeholder="Search"></label></div>
-                                </div>
+                                            class="form-label"><input type="search" class="form-control form-control-sm"
+                                                aria-controls="dataTable" placeholder="Search"></label></div>
+                                </div> --}}
+                                @yield('filter')
                             </div>
                             <div class="table-responsive table mt-2" id="dataTable" role="grid"
                                 aria-describedby="dataTable_info">
-                                <table class="table my-0" id="dataTable">
+                                {{-- <table class="table my-0" id="dataTable">
                                     <thead>
                                         <tr>
                                             <th>ID</th>
-                                            <th>Category ID</th>
-                                            <th>Category</th>
-                                            <th>Book Name</th>
-                                            <th>Book Description</th>
-                                            <th>Book Stock</th>
+                                            <th>Category Name</th>
+                                            <th>Description</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-
+                                        
                                         @php
                                             $number = 1;
                                         @endphp
 
                                         @foreach ($data as $row)
-                                            <tr>
-                                                <th scope="row">{{ $number++ }}</th>
-                                                <td>{{ $row->category_id }}</td>
-                                                <td>{{ $row->category->category_name }}</td>
-                                                <td>{{ $row->book_name }}</td>
-                                                <td>{{ $row->book_description }}</td>
-                                                <td>{{ $row->book_stock }}</td>
-                                                <td>
-                                                    <div class="btn-group" role="group">
-                                                        <a class="btn btn-primary"
-                                                            href="/editbooks/{{ $row->id }}">
-                                                            <i class="fa fa-pencil"></i>
-                                                            Edit
-                                                        </a>
-                                                        <a href="/deletebooks/{{ $row->id }}"
-                                                            class="btn btn-danger">
-                                                            <i class="fa fa-trash-o"></i>
-                                                            Delete
-                                                        </a>
-                                                    </div>
-                                                </td>
-                                            </tr>
+                                        <tr>
+                                            <th scope="row">{{$number++}}</th>
+                                            <td>{{$row->category_name}}</td>
+                                            <td>{{$row->description}}</td>
+                                            <td>
+                                                <div class="btn-group" role="group">
+                                                    <a class="btn btn-primary" href="/editcategories/{{ $row->id }}">
+                                                        <i class="fa fa-pencil"></i> 
+                                                        Edit 
+                                                    </a>
+                                                    <a href="/deletecategories/{{ $row->id }}" class="btn btn-danger"> 
+                                                        <i class="fa fa-trash-o"></i>
+                                                        Delete
+                                                    </a>
+                                                </div>
+                                            </td>
+                                        </tr>
                                         @endforeach
                                     </tbody>
                                     <tfoot>
@@ -280,20 +251,24 @@
                                             </th>
                                         </tr>
                                     </tfoot>
-                                </table>
+                                </table> --}}
+                                @yield('table')
                             </div>
                             <div class="col">
                                 <div class="row">
                                     <div class="col-sm-6 col-xl-1"
                                         style="margin-right: 26px;padding-right: 0px;padding-left: 0px;">
-                                        <span>
-                                            <a class="btn btn-primary d-block btn-user w-100" href="/addbooks"
+                                        {{-- <span>
+                                            <a class="btn btn-primary d-block btn-user w-100" href="/addcategories"
                                                 style="background: rgb(78,223,119);margin-left: 20px;margin-right: 20px;">
-                                                <i class="fa fa-plus" style="font-size: 15px;margin-right: 2px;">
+                                                <i
+                                                    class="fa fa-plus"
+                                                    style="font-size: 15px;margin-right: 2px;">
                                                 </i>
                                                 Add
                                             </a>
-                                        </span>
+                                        </span> --}}
+                                        @yield('add')
                                     </div>
                                 </div>
                             </div>
@@ -302,9 +277,8 @@
                                 <div class="col-sm-6"><span></span></div>
                             </div>
                             <div class="row">
-                                <div class="col-md-6 align-self-center">
-                                    <p id="dataTable_info" class="dataTables_info" role="status"
-                                        aria-live="polite">
+                                {{-- <div class="col-md-6 align-self-center">
+                                    <p id="dataTable_info" class="dataTables_info" role="status" aria-live="polite">
                                         Showing 1 to 10 of 27</p>
                                 </div>
                                 <div class="col-md-6">
@@ -313,15 +287,15 @@
                                         <ul class="pagination">
                                             <li class="page-item disabled"><a class="page-link" aria-label="Previous"
                                                     href="#"><span aria-hidden="true">«</span></a></li>
-                                            <li class="page-item active"><a class="page-link" href="#">1</a>
-                                            </li>
+                                            <li class="page-item active"><a class="page-link" href="#">1</a></li>
                                             <li class="page-item"><a class="page-link" href="#">2</a></li>
                                             <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                            <li class="page-item"><a class="page-link" aria-label="Next"
-                                                    href="#"><span aria-hidden="true">»</span></a></li>
+                                            <li class="page-item"><a class="page-link" aria-label="Next" href="#"><span
+                                                        aria-hidden="true">»</span></a></li>
                                         </ul>
                                     </nav>
-                                </div>
+                                </div> --}}
+                                @yield('pagination')
                             </div>
                         </div>
                     </div>
@@ -329,7 +303,7 @@
             </div>
             <footer class="bg-white sticky-footer">
                 <div class="container my-auto">
-                    <div class="text-center my-auto copyright"><span>Copyright © Brand 2023</span></div>
+                    <div class="text-center my-auto copyright"><span>Kelompok 7</span></div>
                 </div>
             </footer>
         </div><a class="border rounded d-inline scroll-to-top" href="#page-top"><i class="fas fa-angle-up"></i></a>

@@ -2,11 +2,10 @@
 
 namespace App\Models;
 
-use App\Models\books;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
 
-class categories extends Model
+class store extends Model
 {
     use HasFactory;
 
@@ -18,5 +17,5 @@ class categories extends Model
     {
         return $this->hasMany(books::class);
     }
-}
 
+}

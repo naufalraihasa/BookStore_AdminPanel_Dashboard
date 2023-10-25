@@ -13,15 +13,22 @@ return new class extends Migration
     {
         Schema::create('books', function (Blueprint $table) {
             $table->id();
-            $table->integer('category_id')->unsigned();
+            $table->unsignedBigInteger('category_id');
             $table->string('book_name');
             $table->string('book_description');
             $table->integer('book_stock');
+            $table->integer('book_price');
+            $table->unsignedBigInteger('store_id');
         });
 
         Schema::table('books', function (Blueprint $table) {
             $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
         });
+
+        Schema::table('books', function (Blueprint $table) {
+            $table->foreign('store_id')->references('id')->on('stores')->onDelete('cascade');
+        });
+
     }
 
     /**

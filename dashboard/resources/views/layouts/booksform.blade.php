@@ -4,35 +4,34 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Table - Brand</title>
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <title>Profile - Brand</title>
+    <link rel="stylesheet" href="{{ asset('bootstrap/css/bootstrap.min.css') }}">
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i&amp;display=swap">
-    <link rel="stylesheet" href="assets/fonts/fontawesome-all.min.css">
-    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
-    <link rel="stylesheet" href="assets/fonts/fontawesome5-overrides.min.css">
+    <link rel="stylesheet" href="{{ asset('fonts/fontawesome-all.min.css') }}">
     <link rel="stylesheet"
-        href="assets/css/Tricky-Grid---2-Column-on-Desktop--Tablet-Flip-Order-of-12-Column-rows-on-Mobile.css">
+        href="{{ asset('css/Tricky-Grid---2-Column-on-Desktop--Tablet-Flip-Order-of-12-Column-rows-on-Mobile.css') }}">
 </head>
 
 <body id="page-top">
     <div id="wrapper">
         <nav class="navbar align-items-start sidebar sidebar-dark accordion bg-gradient-primary p-0 navbar-dark">
             <div class="container-fluid d-flex flex-column p-0"><a
-                    class="navbar-brand d-flex justify-content-center align-items-center sidebar-brand m-0" href="#">
-                    <div class="sidebar-brand-icon rotate-n-15"><i class="fas fa-laugh-wink"></i></div>
-                    <div class="sidebar-brand-text mx-3"><span>Brand</span></div>
+                    class="navbar-brand d-flex justify-content-center align-items-center sidebar-brand m-0"
+                    href="#">
+                    {{-- <div class="sidebar-brand-icon rotate-n-15"><i class="fas fa-laugh-wink"></i></div> --}}
+                    <div class="sidebar-brand-text mx-3"><span>Analytics</span></div>
                 </a>
                 <hr class="sidebar-divider my-0">
                 <ul class="navbar-nav text-light" id="accordionSidebar">
                     <li class="nav-item"><a class="nav-link" href="analytics.html"><i
                                 class="far fa-chart-bar"></i><span>Analytics</span></a></li>
+                    <li class="nav-item"></li>
                     <li class="nav-item">
                         <a class="nav-link" href="user.html"><i class="fas fa-table"></i><span>User</span></a>
-                        <a class="nav-link" href="/books"><i
-                                class="far fa-list-alt"></i><span>Books</span></a>
+                        <a class="nav-link" href="/books"><i class="far fa-list-alt"></i><span>Books</span></a>
                         <a class="nav-link" href="/categories"><i
-                                class="far fa-list-alt"></i><span>Category</span></a>
+                                class="far fa-list-alt"></i><span>Categories</span></a>
                     </li>
                     <li class="nav-item"></li>
                     <li class="nav-item"></li>
@@ -93,8 +92,8 @@
                                                 <p>Spending Alert: We've noticed unusually high spending for your
                                                     account.</p>
                                             </div>
-                                        </a><a class="dropdown-item text-center small text-gray-500" href="#">Show All
-                                            Alerts</a>
+                                        </a><a class="dropdown-item text-center small text-gray-500"
+                                            href="#">Show All Alerts</a>
                                     </div>
                                 </div>
                             </li>
@@ -121,8 +120,8 @@
                                                 <div class="status-indicator"></div>
                                             </div>
                                             <div class="fw-bold">
-                                                <div class="text-truncate"><span>I have the photos that you ordered last
-                                                        month!</span></div>
+                                                <div class="text-truncate"><span>I have the photos that you ordered
+                                                        last month!</span></div>
                                                 <p class="small text-gray-500 mb-0">Jae Chun - 1d</p>
                                             </div>
                                         </a><a class="dropdown-item d-flex align-items-center" href="#">
@@ -147,8 +146,8 @@
                                                         if they aren't good...</span></div>
                                                 <p class="small text-gray-500 mb-0">Chicken the Dog · 2w</p>
                                             </div>
-                                        </a><a class="dropdown-item text-center small text-gray-500" href="#">Show All
-                                            Alerts</a>
+                                        </a><a class="dropdown-item text-center small text-gray-500"
+                                            href="#">Show All Alerts</a>
                                     </div>
                                 </div>
                                 <div class="shadow dropdown-list dropdown-menu dropdown-menu-end"
@@ -158,18 +157,20 @@
                             <li class="nav-item dropdown no-arrow">
                                 <div class="nav-item dropdown no-arrow"><a class="dropdown-toggle nav-link"
                                         aria-expanded="false" data-bs-toggle="dropdown" href="#"><span
-                                            class="d-none d-lg-inline me-2 text-gray-600 small">Valerie Luna</span><img
+                                            class="d-none d-lg-inline me-2 text-gray-600 small">{{ Auth::user()->name }}</span><img
                                             class="border rounded-circle img-profile"
                                             src="assets/img/avatars/4.jpg"></a>
-                                    <div class="dropdown-menu shadow dropdown-menu-end animated--grow-in"><a
-                                            class="dropdown-item" href="#"><i
-                                                class="fas fa-user fa-sm fa-fw me-2 text-gray-400"></i>&nbsp;Profile</a><a
-                                            class="dropdown-item" href="#"><i
-                                                class="fas fa-cogs fa-sm fa-fw me-2 text-gray-400"></i>&nbsp;Settings</a><a
-                                            class="dropdown-item" href="#"><i
+                                    <div class="dropdown-menu shadow dropdown-menu-end animated--grow-in">
+                                        <a class="dropdown-item" href="#"><i
+                                                class="fas fa-user fa-sm fa-fw me-2 text-gray-400"></i>&nbsp;Profile</a>
+                                        <a class="dropdown-item" href="#"><i
+                                                class="fas fa-cogs fa-sm fa-fw me-2 text-gray-400"></i>&nbsp;Settings</a>
+                                        <a class="dropdown-item" href="#"><i
                                                 class="fas fa-list fa-sm fa-fw me-2 text-gray-400"></i>&nbsp;Activity
                                             log</a>
-                                        <div class="dropdown-divider"></div><a class="dropdown-item" href="#"><i
+                                        <div class="dropdown-divider">
+                                        </div>
+                                        <a class="dropdown-item" href="/logout"><i
                                                 class="fas fa-sign-out-alt fa-sm fa-fw me-2 text-gray-400"></i>&nbsp;Logout</a>
                                     </div>
                                 </div>
@@ -178,152 +179,79 @@
                     </div>
                 </nav>
                 <div class="container-fluid">
-                    <h3 class="text-dark mb-4">Category</h3>
-                    @if ($message = Session::get('success'))
-                    <div class="alert alert-info">
-                        <p>{{$message}}</p>
-                    </div>
-                    @endif
-                    <div class="card shadow">
-                        <div class="card-header py-3">
-                            <p class="text-primary m-0 fw-bold">Category Info</p>
+                    {{-- <h3 class="text-dark mb-4">Add Categories</h3>
+                    <div class="row mb-3">
+                        <div class="col-lg-4">
+                            <div class="card mb-3">
+                                <div class="card-body text-center shadow"><img class="rounded-circle mb-3 mt-4" src="assets/img/dogs/5.png" width="160" height="160">
+                                    <div class="mb-3"><button class="btn btn-primary btn-sm" type="button">Change Photo</button></div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="card-body">
+                        <div class="col-lg-8">
                             <div class="row">
-                                <div class="col-md-6 text-nowrap">
-                                    <div id="dataTable_length" class="dataTables_length" aria-controls="dataTable">
-                                        <label class="form-label">Show&nbsp;<select
-                                                class="d-inline-block form-select form-select-sm">
-                                                <option value="10" selected="">10</option>
-                                                <option value="25">25</option>
-                                                <option value="50">50</option>
-                                                <option value="100">100</option>
-                                            </select>&nbsp;</label></div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="text-md-end dataTables_filter" id="dataTable_filter"><label
-                                            class="form-label"><input type="search" class="form-control form-control-sm"
-                                                aria-controls="dataTable" placeholder="Search"></label></div>
-                                </div>
-                            </div>
-                            <div class="table-responsive table mt-2" id="dataTable" role="grid"
-                                aria-describedby="dataTable_info">
-                                <table class="table my-0" id="dataTable">
-                                    <thead>
-                                        <tr>
-                                            <th>ID</th>
-                                            <th>Category Name</th>
-                                            <th>Description</th>
-                                            <th>Action</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        
-                                        @php
-                                            $number = 1;
-                                        @endphp
-
-                                        @foreach ($data as $row)
-                                        <tr>
-                                            <th scope="row">{{$number++}}</th>
-                                            <td>{{$row->category_name}}</td>
-                                            <td>{{$row->description}}</td>
-                                            <td>
-                                                <div class="btn-group" role="group">
-                                                    <a class="btn btn-primary" href="/editcategories/{{ $row->id }}">
-                                                        <i class="fa fa-pencil"></i> 
-                                                        Edit 
-                                                    </a>
-                                                    <a href="/deletecategories/{{ $row->id }}" class="btn btn-danger"> 
-                                                        <i class="fa fa-trash-o"></i>
-                                                        Delete
-                                                    </a>
+                                <div class="col">
+                                    <div class="card shadow mb-3">
+                                        <div class="card-header py-3">
+                                            <p class="text-primary m-0 fw-bold">New Books</p>
+                                        </div>
+                                        <div class="card-body">
+                                            <form action="/insertbooks" method="POST" enctype="multipart/form-data">
+                                                @csrf
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <label class="form-label" for=""><strong>Book Category</strong></label>
+                                                        <select class="form-select mb-3" name="category_id" aria-label="Default select example">
+                                                            <option selected>Select Book Category</option>
+                                                            @foreach ($categoriesdata as $data)
+                                                                <option value="{{ $data->id}}">{{ $data->category_name}}</option>
+                                                            @endforeach
+                                                        </select>
+                                                    </div>
                                                 </div>
-                                            </td>
-                                        </tr>
-                                        @endforeach
-                                    </tbody>
-                                    <tfoot>
-                                        <tr>
-                                            <th>
-                                                <strong>
-                                                    ID
-                                                </strong>
-                                            </th>
-                                            <th>
-                                                <strong>
-                                                    Category Name
-                                                </strong>
-                                            </th>
-                                            <th>
-                                                <strong>
-                                                    Description
-                                                </strong>
-                                            </th>
-                                            <th>
-                                                <strong>
-                                                    Action
-                                                </strong>
-                                            </th>
-                                        </tr>
-                                    </tfoot>
-                                </table>
-                            </div>
-                            <div class="col">
-                                <div class="row">
-                                    <div class="col-sm-6 col-xl-1"
-                                        style="margin-right: 26px;padding-right: 0px;padding-left: 0px;">
-                                        <span>
-                                            <a class="btn btn-primary d-block btn-user w-100" href="/addcategories"
-                                                style="background: rgb(78,223,119);margin-left: 20px;margin-right: 20px;">
-                                                <i
-                                                    class="fa fa-plus"
-                                                    style="font-size: 15px;margin-right: 2px;">
-                                                </i>
-                                                Add
-                                            </a>
-                                        </span>
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <div class="mb-3"><label class="form-label" for="username"><strong>Book Name</strong></label><input class="form-control" type="text" id="product-name" name="book_name"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <div class="mb-3"><label class="form-label" for="username"><strong>Book Description</strong></label><input class="form-control" type="text" id="product-name" name="book_description"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="form-outline">
+                                                        <label class="form-label" for="typeNumber"><strong>Book Stock</strong></label>
+                                                        <input type="number" id="typeNumber" name="book_stock" class="form-control" />
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <label class="form-label" for=""><strong>Store Location</strong></label>
+                                                        <select class="form-select mb-3" name="store_id" aria-label="Default select example">
+                                                            <option selected>Select Store Location</option>
+                                                            @foreach ($storesdata as $data)
+                                                                <option value="{{ $data->id}}">{{ $data->store_name}}</option>
+                                                            @endforeach
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="mb-3"><button class="btn btn-primary btn-sm" type="submit" style="background: rgb(28,200,138);width: 68.0625px;height: 38.6px;font-size: 16px;">Add</button></div>
+                                            </form>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="row">
-                                <div class="col-sm-6"><span></span></div>
-                                <div class="col-sm-6"><span></span></div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-6 align-self-center">
-                                    <p id="dataTable_info" class="dataTables_info" role="status" aria-live="polite">
-                                        Showing 1 to 10 of 27</p>
-                                </div>
-                                <div class="col-md-6">
-                                    <nav
-                                        class="d-lg-flex justify-content-lg-end dataTables_paginate paging_simple_numbers">
-                                        <ul class="pagination">
-                                            <li class="page-item disabled"><a class="page-link" aria-label="Previous"
-                                                    href="#"><span aria-hidden="true">«</span></a></li>
-                                            <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                                            <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                            <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                            <li class="page-item"><a class="page-link" aria-label="Next" href="#"><span
-                                                        aria-hidden="true">»</span></a></li>
-                                        </ul>
-                                    </nav>
-                                </div>
-                            </div>
                         </div>
-                    </div>
+                    </div> --}}
+                    @yield('form-input')
                 </div>
             </div>
-            <footer class="bg-white sticky-footer">
-                <div class="container my-auto">
-                    <div class="text-center my-auto copyright"><span>Copyright © Brand 2023</span></div>
-                </div>
-            </footer>
         </div><a class="border rounded d-inline scroll-to-top" href="#page-top"><i class="fas fa-angle-up"></i></a>
     </div>
-    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-    <script src="assets/js/bs-init.js"></script>
-    <script src="assets/js/theme.js"></script>
+    <script src="{{ asset('bootstrap/js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('js/bs-init.js') }}"></script>
+    <script src="{{ asset('js/theme.js') }}"></script>
 </body>
 
 </html>
