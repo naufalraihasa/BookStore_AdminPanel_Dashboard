@@ -12,6 +12,9 @@
                         class="far fa-chart-bar"></i><span>Analytics</span></a></li>
             <li class="nav-item">
                 <a class="nav-link" href="/books_store_A"><i class="far fa-list-alt"></i><span>Books</span></a>
+                <a class="nav-link" href="/customersA"><i class="far fa-list-alt"></i><span>Customers</span></a>
+                <a class="nav-link" href="/ordersA"><i class="far fa-list-alt"></i><span>Orders</span></a>
+                <a class="nav-link" href="/orderlistA"><i class="far fa-list-alt"></i><span>Order List</span></a>
             </li>
             <li class="nav-item"></li>
             <li class="nav-item"></li>
@@ -59,7 +62,8 @@
                                 </option>
                                 <option value="1" {{ Request::get('category_id') == '1' ? 'selected' : '' }}>Mystery
                                 </option>
-                                <option value="5" {{ Request::get('category_id') == '5' ? 'selected' : '' }}>Non-Fiction
+                                <option value="5" {{ Request::get('category_id') == '5' ? 'selected' : '' }}>
+                                    Non-Fiction
                                 </option>
                             </select>&nbsp;
                         </label>
