@@ -13,7 +13,7 @@ class CreateOrdersTable extends Migration
             $table->unsignedBigInteger('customer_id');
             $table->date('order_date')->default(now());
             $table->unsignedBigInteger('store_id')->default(1); // Set the default value to 1
-            $table->foreign('store_id')->references('id')->on('stores');
+            $table->foreign('store_id')->references('id')->on('stores')->onDelete("cascade");
             $table->timestamps();
         });
     }
