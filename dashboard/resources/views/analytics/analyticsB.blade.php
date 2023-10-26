@@ -4,6 +4,9 @@
     <li class="nav-item"><a class="nav-link" href="/analytics_store_B"><i class="far fa-chart-bar"></i><span>Analytics</span></a></li>
     <li class="nav-item">
         <a class="nav-link" href="/books_store_B"><i class="far fa-list-alt"></i><span>Books</span></a>
+        <a class="nav-link" href="/customersB"><i class="fas fa-table"></i><span>Customers</span></a>
+        <a class="nav-link" href="/ordersB"><i class="far fa-list-alt"></i><span>Orders</span></a>
+        <a class="nav-link" href="/orderlistB"><i class="far fa-list-alt"></i><span>Order List</span></a>
     </li>
 @endsection
 

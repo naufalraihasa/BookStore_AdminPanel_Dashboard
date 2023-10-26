@@ -6,6 +6,10 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\StoreController;
 use App\Http\Controllers\AnalyticsController;
 use App\Http\Controllers\CategoriesController;
+use App\Http\Controllers\CustomersController;
+use App\Http\Controllers\OrderController;
+use App\Http\Controllers\OrderListController;
+use App\Http\Controllers\OrderDetailsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -48,11 +52,38 @@ Route::group(['middleware' => ['auth','hakakses:master']], function(){
 Route::group(['middleware' => ['auth','hakakses:userA']], function(){
     Route::get('/analytics_store_A', [AnalyticsController::class, "analyticsA"])->name("analyticsA");
     Route::get('/books_store_A', [BooksController::class, "booksA"])->name("booksA");
+    Route::get('/customersA', [CustomersController::class, 'indexA'])->name('customersA.indexA');
+    Route::get('/addcustomersA', [CustomersController::class, 'createA'])->name('customersA.create');
+    Route::get('/deletecustomersA/{id}', [CustomersController::class, 'deletecustomersA'])->name('customersA.delete');
+    Route::post('/insertcustomersA', [CustomersController::class, 'storeA'])->name('customersA.storeA'); // Use 'store' method here
+    Route::get('/editcustomersA/{id}', [CustomersController::class, 'editcustomersA'])->name('customersA.edit');
+    Route::post('/updatecustomersA/{id}', [CustomersController::class, 'updatecustomersA'])->name('customersA.update');
+    Route::delete('/customers/{id}', [CustomersController::class, 'destroy'])->name('customers.destroy');
+    Route::get('/ordersA', [OrderController::class, 'indexA'])->name('ordersA.indexA');
+    Route::post('/add-orderA', [OrderController::class, 'addOrderA'])->name('orderA.addA'); // Use 'delete' method here
+    Route::get('/orderlistA', [OrderListController::class, 'indexA'])->name('orderlistA');
+    Route::get('/ordersA/{id}', 'OrderController@showA')->name('orders.showA');
+    Route::get('/orderdetailsA/{id}', [OrderDetailsController::class, 'showA'])->name('orderdetailsA.showA');
+
+
+
 });
 
 Route::group(['middleware' => ['auth','hakakses:userB']], function(){
     Route::get('/analytics_store_B', [AnalyticsController::class, "analyticsB"])->name("analyticsB");
     Route::get('/books_store_B', [BooksController::class, "booksB"])->name("booksB");
+    Route::get('/customersB', [CustomersController::class, 'indexB'])->name('customersB.indexB');
+    Route::get('/addcustomersB', [CustomersController::class, 'createB'])->name('customersB.create');
+    Route::get('/deletecustomersB/{id}', [CustomersController::class, 'deletecustomersB'])->name('customersB.delete');
+    Route::post('/insertcustomersB', [CustomersController::class, 'storeB'])->name('customersB.storeB'); // Use 'store' method here
+    Route::get('/editcustomersB/{id}', [CustomersController::class, 'editcustomersB'])->name('customersB.edit');
+    Route::post('/updatecustomersB/{id}', [CustomersController::class, 'updatecustomersB'])->name('customersB.update');
+    Route::delete('/customers/{id}', [CustomersController::class, 'destroy'])->name('customers.destroy');
+    Route::get('/ordersB', [OrderController::class, 'indexB'])->name('ordersB.indexB');
+    Route::post('/add-orderB', [OrderController::class, 'addOrderB'])->name('orderB.addB'); // Use 'delete' method here
+    Route::get('/orderlistB', [OrderListController::class, 'indexB'])->name('orderlistB');
+    Route::get('/ordersB/{id}', 'OrderController@showB')->name('orders.showB');
+    Route::get('/orderdetailsB/{id}', [OrderDetailsController::class, 'showB'])->name('orderdetailsB.showB');
 });
 
 
