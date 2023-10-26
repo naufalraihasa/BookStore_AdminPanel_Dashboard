@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\books;
+use App\Models\Order;
 use App\Models\analytics;
+use App\Models\OrderDetail;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -14,6 +16,10 @@ class AnalyticsController extends Controller
         $selectedStore = $request->input('store', 1); // Default to store_id 1 if no selection is made
 
         $totalbooks = books::count();
+
+        $totalorders = Order::count();
+
+        $totalrevenue = OrderDetail::sum('subtotal');
 
         $results = DB::select("SELECT COUNT(books.book_name) AS bookName, categories.category_name
             FROM books
@@ -29,7 +35,9 @@ class AnalyticsController extends Controller
 
         $pieChartData = $data_books_categories_A;
 
-        return view("analytics.analytics", compact('totalbooks', 'pieChartData'));
+        
+
+        return view("analytics.analytics", compact('totalbooks', 'pieChartData','totalorders','totalrevenue'));
     }
 
 
@@ -39,6 +47,8 @@ class AnalyticsController extends Controller
         //$dataA (ditampilin di admin A)
         //$dataB (ditampilin di admin B)
         $totalbooks = books::where('store_id', 1)->count();
+        // $totalorders = DB::select('SELECT COUNT(orders_details.order_id)');
+        $totalorders = Order::count();
 
         $results = DB::select("SELECT COUNT(books.book_name) AS bookName, categories.category_name
             FROM books

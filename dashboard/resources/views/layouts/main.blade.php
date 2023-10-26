@@ -33,7 +33,6 @@
                     <li class="nav-item"><a class="nav-link" href="/analytics"><i
                                 class="far fa-chart-bar"></i><span>Analytics</span></a></li>
                     <li class="nav-item">
-                        <a class="nav-link" href="user.html"><i class="fas fa-table"></i><span>User</span></a>
                         <a class="nav-link" href="/books"><i class="far fa-list-alt"></i><span>Books</span></a>
                         <a class="nav-link" href="/categories"><i class="far fa-list-alt"></i><span>Category</span></a>
                     </li>
